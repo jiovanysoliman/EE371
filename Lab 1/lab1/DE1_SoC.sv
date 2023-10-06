@@ -5,7 +5,9 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, V_GPIO);
 	input  logic		 CLOCK_50;	// 50MHz clock
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;	// active low
 	inout  logic [35:0] V_GPIO;	// expansion header 0 (LabsLand board)
-			 logic reset;
+	       logic inner, outer;
+	    logic [31:0] div_clk;
+		logic reset;
 	
 	
 	parameter whichClock = 0; // 0.75 Hz clock
@@ -41,6 +43,13 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, V_GPIO);
 	assign V_GPIO[35] = V_GPIO[23];
 	assign reset = V_GPIO[23];
 	
-	parking_lot_occupancy parking (.clk(clkSelect), .reset(reset), .V_GPIO(V_GPIO), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
+	//2 DFFs in series for each input (switch) will help eliminate metastability
+	D_FF outer_switch_1 (.q(V_GPIO[24]), .d(outer_wire), .clk);
+	D_FF outer_switch_2 (.q(outer_wire), .d(outer), .clk);
+	
+	D_FF inner_switch_1 (.q(V_GPIO[29]), .d(inner_wire), .clk);
+	D_FF inner_switch_2 (.q(inner_wire), .d(inner), .clk);
+	
+	parking_lot_occupancy parking (.clk(clkSelect), .reset(reset), .inner(inner), .outer(outer), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
 endmodule  // DE1_SoC
