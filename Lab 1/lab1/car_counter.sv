@@ -226,3 +226,33 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	end
     
 endmodule // car_counter
+
+
+
+module car_counter_testbench();
+	logic clk, reset, incr, decr;
+	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	
+	car_counter dut (.*);
+	
+	// Set up a simulated clock
+	parameter CLOCK_PERIOD = 100;
+	initial begin
+		clk <= 0;
+		forever #(CLOCK_PERIOD/2) clk <= ~clk; // forever toggle the clock
+	end
+	
+	// Set up the inputs to the design. Each line is a clock cycle.
+	initial begin
+		
+		reset <= 1;												@(posedge clk);
+		reset <= 0; incr <= 0; decr <= 0; repeat(2)  @(posedge clk);
+						incr <= 1;				 repeat(17) @(posedge clk);
+		reset <= 1; 											@(posedge clk);
+		reset <= 0; incr <= 0; decr <= 0; repeat(2)  @(posedge clk);
+									  decr <= 1; repeat(17) @(posedge clk);
+																	$stop;
+	end
+endmodule
+	
+	
