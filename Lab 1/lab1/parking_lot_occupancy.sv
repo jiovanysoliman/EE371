@@ -6,7 +6,7 @@ module parking_lot_occupancy(clk, reset, inner, outer, HEX0, HEX1, HEX2, HEX3, H
 //	output logic inner_led, outer_led; // off-board LEDs to indicate the value of photosensor inputs (1 = on/blocked, 0 = off/unblocked)
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; // 7-bit counter for HEX display module
 // 	input  logic [35:0] V_GPIO;
-			 logic enter, exit, outer_wire, inner_wire, outer, inner;
+			 logic enter, exit, outer_wire, inner_wire;
 			 
 
 	// connect car detector, car counter, and HEX display modules

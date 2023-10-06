@@ -24,12 +24,12 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, V_GPIO);
 
 	
     // Turn off all 7-seg displays (active low: 1 = off, 0 = on)
-	assign HEX0 = 7'b1111111;
-	assign HEX1 = 7'b1111111;
-	assign HEX2 = 7'b1111111;
-	assign HEX3 = 7'b1111111;
-	assign HEX4 = 7'b1111111;
-	assign HEX5 = 7'b1111111;
+// 	assign HEX0 = 7'b1111111;
+// 	assign HEX1 = 7'b1111111;
+// 	assign HEX2 = 7'b1111111;
+// 	assign HEX3 = 7'b1111111;
+// 	assign HEX4 = 7'b1111111;
+// 	assign HEX5 = 7'b1111111;
 	
 	
 	// LED ON (1) = SENSOR BLOCKED. LED OFF (0) = SENSOR UNBLOCKED		 
@@ -44,11 +44,11 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, V_GPIO);
 	assign reset = V_GPIO[23];
 	
 	//2 DFFs in series for each input (switch) will help eliminate metastability
-	D_FF outer_switch_1 (.q(V_GPIO[24]), .d(outer_wire), .clk);
-	D_FF outer_switch_2 (.q(outer_wire), .d(outer), .clk);
+	D_FF outer_switch_1 (.q(outer_wire), .d(V_GPIO[24]), .clk(clkSelect));
+	D_FF outer_switch_2 (.q(outer), .d(outer_wire), .clk(clkSelect));
 	
-	D_FF inner_switch_1 (.q(V_GPIO[29]), .d(inner_wire), .clk);
-	D_FF inner_switch_2 (.q(inner_wire), .d(inner), .clk);
+	D_FF inner_switch_1 (.q(inner_wire, .d(V_GPIO[29]), .clk(clkSelect));
+	D_FF inner_switch_2 (.q(inner), .d(inner_wire), .clk(clkSelect));
 	
 	parking_lot_occupancy parking (.clk(clkSelect), .reset(reset), .inner(inner), .outer(outer), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
