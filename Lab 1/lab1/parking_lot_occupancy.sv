@@ -1,7 +1,7 @@
 // Combines car_detection module and car_counter module to determine occupancy of parking lot.
 // May need to change module header with appropriate I/O as necessary.
 module parking_lot_occupancy(clk, V_GPIO, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
-	input  logic clk, reset;
+	input  logic clk;
 //	input  logic inner_switch, outer_switch; // off-board switches to mimic photosensor inputs
 //	output logic inner_led, outer_led; // off-board LEDs to indicate the value of photosensor inputs (1 = on/blocked, 0 = off/unblocked)
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; // 7-bit counter for HEX display module
@@ -16,7 +16,7 @@ module parking_lot_occupancy(clk, V_GPIO, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	assign V_GPIO[34] = V_GPIO[29];
 	
 	// assign v_GPIO[35] (reset LED) to V_GPIO[23] (reset switch)
-	assign v_GPIO[35] = V_GPIO[23];
+	assign V_GPIO[35] = V_GPIO[23];
 	assign reset = V_GPIO[23];
 	
 	
