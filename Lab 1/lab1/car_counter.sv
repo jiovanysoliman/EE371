@@ -229,7 +229,7 @@ endmodule // car_counter
 
 
 
-module car_counter_testbench();
+module car_counter_tb();
 	logic clk, reset, incr, decr;
 	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 	

@@ -1,0 +1,52 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:01:56 on Oct 06,2023
+# vlog -reportprogress 300 ./car_counter.sv 
+# -- Compiling module car_counter
+# -- Compiling module car_counter_tb
+# 
+# Top level modules:
+# 	car_counter_tb
+# End time: 12:01:56 on Oct 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:01:56 on Oct 06,2023
+# vlog -reportprogress 300 ./car_detection.sv 
+# -- Compiling module car_detection
+# -- Compiling module car_detection_tb
+# 
+# Top level modules:
+# 	car_detection_tb
+# End time: 12:01:56 on Oct 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:01:56 on Oct 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 12:01:56 on Oct 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:01:56 on Oct 06,2023
+# vlog -reportprogress 300 ./parking_lot_occupancy.sv 
+# -- Compiling module parking_lot_occupancy
+# 
+# Top level modules:
+# 	parking_lot_occupancy
+# End time: 12:01:56 on Oct 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work car_counter_tb 
+# Start time: 12:01:56 on Oct 06,2023
+# Loading sv_std.std
+# Loading work.car_counter_tb
+# Loading work.car_counter
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./car_counter.sv(254)
+#    Time: 3950 ps  Iteration: 1  Instance: /car_counter_tb
+# Break in Module car_counter_tb at ./car_counter.sv line 254
