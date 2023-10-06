@@ -24,7 +24,9 @@ vlog "./parking_lot_occupancy.sv"
 #    the testbench module you want to execute.
 #  - If you need the altera_mf_ver library, add "-Lf altera_mf_lib"
 #    (no quotes) to the end of the vsim command
-vsim -voptargs="+acc" -t 1ps -lib work car_counter_tb
+vsim -voptargs="+acc" -t 1ps -lib work DE1_SoC_tb
+#vsim -voptargs="+acc" -t 1ps -lib work car_counter_tb
+#vsim -voptargs="+acc" -t 1ps -lib work car_detection_tb
 
 
 # Source the wave do file

@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1
 vcar_counter
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1696618916
+Z2 !s110 1696624606
 !i10b 1
 !s100 7Hb48EY4?4ZPGlI6^M0=`3
 IAJcT^h;2c0UMMfNKm8K4Z3
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1696618916.000000
+Z9 !s108 1696624606.000000
 Z10 !s107 ./car_counter.sv|
 Z11 !s90 -reportprogress|300|./car_counter.sv|
 !i113 1
@@ -127,26 +127,50 @@ vDE1_SoC
 R1
 R2
 !i10b 1
-!s100 MO6YHhElGbUIaHgi`6Z`Z1
-IBl8kN6:]ZUeoab`I?ga8m3
+!s100 o:zNbWQAGF^ZF6]?>;mjL1
+I3870DnMgem;0InbiMnioC3
 R3
-!s105 DE1_SoC_sv_unit
+Z20 !s105 DE1_SoC_sv_unit
 S1
 R0
-w1696618641
-8./DE1_SoC.sv
-F./DE1_SoC.sv
+Z21 w1696624277
+Z22 8./DE1_SoC.sv
+Z23 F./DE1_SoC.sv
 L0 3
 R8
 r1
 !s85 0
 31
 R9
-!s107 ./DE1_SoC.sv|
-!s90 -reportprogress|300|./DE1_SoC.sv|
+Z24 !s107 ./DE1_SoC.sv|
+Z25 !s90 -reportprogress|300|./DE1_SoC.sv|
 !i113 1
 R12
 n@d@e1_@so@c
+vDE1_SoC_tb
+R1
+R2
+!i10b 1
+!s100 WX[EIFAf<m9jS:gi3ZDXU3
+I]AgYgIU8ZS;S8Y08`QD`]1
+R3
+R20
+S1
+R0
+R21
+R22
+R23
+L0 26
+R8
+r1
+!s85 0
+31
+R9
+R24
+R25
+!i113 1
+R12
+n@d@e1_@so@c_tb
 vparking_lot_occupancy
 R1
 R2
