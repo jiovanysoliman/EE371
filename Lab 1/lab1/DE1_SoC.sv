@@ -5,6 +5,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, V_GPIO);
 	input  logic		 CLOCK_50;	// 50MHz clock
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;	// active low
 	inout  logic [35:0] V_GPIO;	// expansion header 0 (LabsLand board)
+			 logic reset;
 	
 	
 	parameter whichClock = 0; // 0.75 Hz clock
@@ -40,6 +41,6 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, V_GPIO);
 	assign V_GPIO[35] = V_GPIO[23];
 	assign reset = V_GPIO[23];
 	
-	parking_lot_occupancy parking (.clk(clkSelect), .V_GPIO, .HEX0, .HEX1, .HEX2, .HEX3, .HEX4, .HEX5);
+	parking_lot_occupancy parking (.clk(clkSelect), .reset(reset), .V_GPIO(V_GPIO), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
 endmodule  // DE1_SoC
