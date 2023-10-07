@@ -1,5 +1,4 @@
 /* Top-level module for LandsLand hardware connections to implement the parking lot system.*/
-
 module DE1_SoC (CLOCK_50, V_GPIO, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 
 	input logic CLOCK_50;	// 50MHz clock
@@ -16,6 +15,7 @@ module DE1_SoC (CLOCK_50, V_GPIO, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
  	// assign v_GPIO[35] (reset LED) to V_GPIO[23] (reset switch)
  	assign V_GPIO[35] = V_GPIO[23];
 	
+	// make an instance of the module parking_lot_occupancy that contains 2 modules, car_detection, and car_counter.
 	parking_lot_occupancy parking (.clk(CLOCK_50), .reset(V_GPIO[23]), .inner(V_GPIO[29]), .outer(V_GPIO[24]), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
 endmodule  // DE1_SoC
@@ -28,7 +28,7 @@ module DE1_SoC_tb ();
 	// inout pins must be connected to a wire type
 	wire [35:0] V_GPIO;
 	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-	logic CLOCK_50;
+	logic clk;
 	
 	// additional logic required to simulate inout pins
 	logic [35:0] V_GPIO_in;
@@ -42,18 +42,20 @@ module DE1_SoC_tb ();
 		end
 	endgenerate
 	
-	DE1_SoC dut (.CLOCK_50(CLOCK_50), .V_GPIO, .HEX0, .HEX1, .HEX2, .HEX3, .HEX4, .HEX5);
-	
-	parameter CLOCK_PERIOD = 10;
-	
-	logic clk;
+	// begin simulation
+	//simulate clock signal
 	initial begin
-		clk <= 0;
+	parameter CLOCK_PERIOD = 10;
+	clk <= 0;
 		forever #(CLOCK_PERIOD/2) clk <= ~clk; // forever toggle the clock
 	end
 	
-	// you only need to set the pin directions once
+	//initialize an instance of the device under test (dut)
+	DE1_SoC dut (.CLOCK_50(clk), .V_GPIO, .HEX0, .HEX1, .HEX2, .HEX3, .HEX4, .HEX5);
+	
+	
 	initial begin
+	// you only need to set the pin directions once
 	V_GPIO_dir[23] = 1'b1;
 	V_GPIO_dir[24] = 1'b1;
 	V_GPIO_dir[29] = 1'b1;
@@ -73,64 +75,44 @@ module DE1_SoC_tb ();
 	V_GPIO_in[24] = 1'b0; #10;
 	V_GPIO_in[29] = 1'b0; #10;
 	
-		// car going in sequence. 
+	// activate reset switch once.
+	V_GPIO_in[23] = 1'b1; #10;
+	V_GPIO_in[23] = 1'b0; #10;
+	
+	// car going in sequence. repeats 16 times. 
+	for (int i = 0; i <= 16; i++) begin: carsIn
+		V_GPIO_in[24] = 1'b1; #10;
+		V_GPIO_in[29] = 1'b1; #10;
+		V_GPIO_in[24] = 1'b0; #10;
+		V_GPIO_in[29] = 1'b0; #10;
+	end
+	
+	// car going out in sequence. repeats 16 times.
+	for (int i = 0; i <= 16; i++) begin: carsOut
+		V_GPIO_in[29] = 1'b1; #10;
+		V_GPIO_in[24] = 1'b1; #10;
+		V_GPIO_in[29] = 1'b0; #10;
+		V_GPIO_in[24] = 1'b0; #10;
+	end
+	
+	// Car going in, then pedestrian going in. 
 	V_GPIO_in[24] = 1'b1; #10;
 	V_GPIO_in[29] = 1'b1; #10;
 	V_GPIO_in[24] = 1'b0; #10;
 	V_GPIO_in[29] = 1'b0; #10;
 	
-		// car going in sequence. 
 	V_GPIO_in[24] = 1'b1; #10;
-	V_GPIO_in[29] = 1'b1; #10;
 	V_GPIO_in[24] = 1'b0; #10;
+	V_GPIO_in[29] = 1'b1; #10;
 	V_GPIO_in[29] = 1'b0; #10;
 	
-		// car going in sequence. 
-	V_GPIO_in[24] = 1'b1; #10;
+	// pedestrian going out. 
 	V_GPIO_in[29] = 1'b1; #10;
-	V_GPIO_in[24] = 1'b0; #10;
 	V_GPIO_in[29] = 1'b0; #10;
-	
-//	// activate reset switch once.
-//	V_GPIO_in[23] = 1'b1; #10;
-//	V_GPIO_in[23] = 1'b0; #10;
-//	
-//	// car going in sequence. NEEDS TO REPEAT 16 Times. 
-//		for (int y = 0; y <= 16; y++) begin: carsIn
-//			V_GPIO_in[24] = 1'b1; #10;
-//			V_GPIO_in[29] = 1'b1; #10;
-//			V_GPIO_in[24] = 1'b0; #10;
-//			V_GPIO_in[29] = 1'b0; #10;
-//		end
-//	
-//	// car going out in sequence. NEEDS TO REPEAT 16 Times.
-//		for ( int z = 0; z <= 16; z++) begin: carsOut
-//			V_GPIO_in[29] = 1'b1; #10;
-//			V_GPIO_in[24] = 1'b1; #10;
-//			V_GPIO_in[29] = 1'b0; #10;
-//			V_GPIO_in[24] = 1'b0; #10;
-//		end
-//	
-//	// Car going in, then pedestrian going in. 
-//	V_GPIO_in[24] = 1'b1; #10;
-//	V_GPIO_in[29] = 1'b1; #10;
-//	V_GPIO_in[24] = 1'b0; #10;
-//	V_GPIO_in[29] = 1'b0; #10;
-//	
-//	V_GPIO_in[24] = 1'b1; #10;
-//	V_GPIO_in[24] = 1'b0; #10;
-//	V_GPIO_in[29] = 1'b1; #10;
-//	V_GPIO_in[29] = 1'b0; #10;
-//	
-//	// pedestrian going out. 
-//	V_GPIO_in[29] = 1'b1; #10;
-//	V_GPIO_in[29] = 1'b0; #10;
-//	V_GPIO_in[24] = 1'b1; #10;
-//	V_GPIO_in[24] = 1'b0; #10;
+	V_GPIO_in[24] = 1'b1; #10;
+	V_GPIO_in[24] = 1'b0; #10;
 	
 	$stop;
 	
 	end
-	
-	
-endmodule // GPIO_example_tb
+endmodule // DE1_SoC_tb

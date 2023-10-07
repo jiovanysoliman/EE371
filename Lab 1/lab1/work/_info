@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1
 vcar_counter
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1696624606
+Z2 !s110 1696646790
 !i10b 1
 !s100 7Hb48EY4?4ZPGlI6^M0=`3
 IAJcT^h;2c0UMMfNKm8K4Z3
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1696624606.000000
+Z9 !s108 1696646790.000000
 Z10 !s107 ./car_counter.sv|
 Z11 !s90 -reportprogress|300|./car_counter.sv|
 !i113 1
@@ -127,16 +127,16 @@ vDE1_SoC
 R1
 R2
 !i10b 1
-!s100 o:zNbWQAGF^ZF6]?>;mjL1
-I3870DnMgem;0InbiMnioC3
+!s100 UcoiUbYCAzB5AZ_jXLGVE2
+IPJ@9eDhA6Lel0R]nNdHaB0
 R3
 Z20 !s105 DE1_SoC_sv_unit
 S1
 R0
-Z21 w1696624277
+Z21 w1696646785
 Z22 8./DE1_SoC.sv
 Z23 F./DE1_SoC.sv
-L0 3
+L0 2
 R8
 r1
 !s85 0
@@ -151,8 +151,8 @@ vDE1_SoC_tb
 R1
 R2
 !i10b 1
-!s100 WX[EIFAf<m9jS:gi3ZDXU3
-I]AgYgIU8ZS;S8Y08`QD`]1
+!s100 `TNkGDn6^J2`[1^[G;d2<2
+Ig<D4;Dn>4cEX96]:QY05>0
 R3
 R20
 S1

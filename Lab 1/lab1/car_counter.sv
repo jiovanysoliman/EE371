@@ -1,6 +1,7 @@
-// Module increments/decrements a counter based on the enter/exit signals and outputs to HEX_display module.
+// Module that implments a FSM to keep track of the number of cars in the parking lot.
 // Max occupancy in parking lot is 16.
-
+// 1 bit inputs are clk, reset, incr, decr
+// 7 bits outputs are HEX0, HEX1, HEX2, HEX3, HEX4, HEX5
 module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     input logic clk, reset, incr, decr; // Initialize inputs
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; // Initialize outputs
@@ -228,7 +229,6 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 endmodule // car_counter
 
 
-
 module car_counter_tb();
 	logic clk, reset, incr, decr;
 	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
@@ -253,6 +253,6 @@ module car_counter_tb();
 									  decr <= 1; repeat(17) @(posedge clk);
 																	$stop;
 	end
-endmodule
+endmodule //car_counter_tb
 	
 	

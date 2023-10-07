@@ -1,8 +1,8 @@
 // Module detects if a car is entering or exiting and asserts the "enter" or "exit" signals for the counter.
-// May need to change module header with appropriate I/O as necessary.
+// 1 bit inputs are outer, inner, clk, reset
+// 1 bit outputs are enter, exit
 module car_detection (clk, reset, outer, inner, enter, exit);
-	input  logic outer, inner; // input from off-board switches
-	input  logic clk, reset;
+	input  logic outer, innerclk, reset; // input from off-board switches
 	output logic enter, exit;  // outputs connected to off-board LEDs in parking_lot_occupancy module
 
 	// enumerate the possible values for present state (ps), and next state (ns)
@@ -10,7 +10,6 @@ module car_detection (clk, reset, outer, inner, enter, exit);
 	
 	// case transition logic
 	always_comb begin
-	
 		case (ps)
 		
 			S0: begin // initial state
@@ -124,4 +123,4 @@ module car_detection_tb();
 										inner <= 0;	repeat(4) @(posedge clk); // EXIT = 1!!!!
 																	 $stop;
 	end
-endmodule
+endmodule //car_detection_tb

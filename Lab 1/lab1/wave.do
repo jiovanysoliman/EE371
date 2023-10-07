@@ -7,9 +7,15 @@ add wave -noupdate /DE1_SoC_tb/dut/HEX2
 add wave -noupdate /DE1_SoC_tb/dut/HEX3
 add wave -noupdate /DE1_SoC_tb/dut/HEX4
 add wave -noupdate /DE1_SoC_tb/dut/HEX5
-add wave -noupdate /DE1_SoC_tb/dut/V_GPIO
+add wave -noupdate {/DE1_SoC_tb/dut/V_GPIO[35]}
+add wave -noupdate {/DE1_SoC_tb/dut/V_GPIO[34]}
+add wave -noupdate {/DE1_SoC_tb/dut/V_GPIO[32]}
+add wave -noupdate {/DE1_SoC_tb/dut/V_GPIO[29]}
+add wave -noupdate {/DE1_SoC_tb/dut/V_GPIO[24]}
+add wave -noupdate {/DE1_SoC_tb/dut/V_GPIO[23]}
+add wave -noupdate /DE1_SoC_tb/dut/parking/counter/ps
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {34 ps} 0}
+WaveRestoreCursors {{Cursor 1} {46 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
