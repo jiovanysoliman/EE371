@@ -2,7 +2,7 @@
 // 1 bit inputs are outer, inner, clk, reset
 // 1 bit outputs are enter, exit
 module car_detection (clk, reset, outer, inner, enter, exit);
-	input  logic outer, innerclk, reset; // input from off-board switches
+	input  logic outer, inner, clk, reset; // input from off-board switches
 	output logic enter, exit;  // outputs connected to off-board LEDs in parking_lot_occupancy module
 
 	// enumerate the possible values for present state (ps), and next state (ns)
