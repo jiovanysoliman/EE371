@@ -16,13 +16,14 @@ module DE1_SoC (CLOCK_50, V_GPIO, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
  	assign V_GPIO[35] = V_GPIO[23];
 	
 	// make an instance of the module parking_lot_occupancy that contains 2 modules, car_detection, and car_counter.
-	parking_lot_occupancy parking (.clk(CLOCK_50), .reset(V_GPIO[23]), .inner(V_GPIO[29]), .outer(V_GPIO[24]), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
+	parking_lot_occupancy parking (.clk(CLOCK_50), .reset(V_GPIO[23]), 
+	.inner(V_GPIO[29]), .outer(V_GPIO[24]), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
 endmodule  // DE1_SoC
 
 
 
-/* Test bench for the GPIO example module */
+/* Test bench for the DE1_SoC module */
 module DE1_SoC_tb ();
 
 	// inout pins must be connected to a wire type

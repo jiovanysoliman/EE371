@@ -2,162 +2,47 @@
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:33:31 on Oct 06,2023
+# Start time: 20:44:09 on Oct 06,2023
 # vlog -reportprogress 300 ./car_counter.sv 
 # -- Compiling module car_counter
 # -- Compiling module car_counter_tb
 # 
 # Top level modules:
 # 	car_counter_tb
-# End time: 19:33:31 on Oct 06,2023, Elapsed time: 0:00:00
+# End time: 20:44:09 on Oct 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:33:31 on Oct 06,2023
+# Start time: 20:44:09 on Oct 06,2023
 # vlog -reportprogress 300 ./car_detection.sv 
 # -- Compiling module car_detection
 # -- Compiling module car_detection_tb
 # 
 # Top level modules:
 # 	car_detection_tb
-# End time: 19:33:31 on Oct 06,2023, Elapsed time: 0:00:00
+# End time: 20:44:09 on Oct 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:33:31 on Oct 06,2023
+# Start time: 20:44:09 on Oct 06,2023
 # vlog -reportprogress 300 ./DE1_SoC.sv 
 # -- Compiling module DE1_SoC
 # -- Compiling module DE1_SoC_tb
 # 
 # Top level modules:
 # 	DE1_SoC_tb
-# End time: 19:33:31 on Oct 06,2023, Elapsed time: 0:00:00
+# End time: 20:44:09 on Oct 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:33:31 on Oct 06,2023
+# Start time: 20:44:09 on Oct 06,2023
 # vlog -reportprogress 300 ./parking_lot_occupancy.sv 
 # -- Compiling module parking_lot_occupancy
+# -- Compiling module parking_lot_occupancy_tb
 # 
 # Top level modules:
-# 	parking_lot_occupancy
-# End time: 19:33:31 on Oct 06,2023, Elapsed time: 0:00:00
+# 	parking_lot_occupancy_tb
+# End time: 20:44:09 on Oct 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb 
-# Start time: 19:33:31 on Oct 06,2023
-# Loading sv_std.std
-# Loading work.DE1_SoC_tb
-# Loading work.DE1_SoC
-# Loading work.parking_lot_occupancy
-# Loading work.car_detection
-# Loading work.car_counter
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./DE1_SoC.sv(129)
-#    Time: 160 ps  Iteration: 0  Instance: /DE1_SoC_tb
-# Break in Module DE1_SoC_tb at ./DE1_SoC.sv line 129
-add wave -position 7  sim:/DE1_SoC_tb/dut/parking/counter/ps
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/wave.do}
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:37:22 on Oct 06,2023
-# vlog -reportprogress 300 ./car_counter.sv 
-# -- Compiling module car_counter
-# -- Compiling module car_counter_tb
-# 
-# Top level modules:
-# 	car_counter_tb
-# End time: 19:37:22 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:37:22 on Oct 06,2023
-# vlog -reportprogress 300 ./car_detection.sv 
-# -- Compiling module car_detection
-# -- Compiling module car_detection_tb
-# 
-# Top level modules:
-# 	car_detection_tb
-# End time: 19:37:22 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:37:22 on Oct 06,2023
-# vlog -reportprogress 300 ./DE1_SoC.sv 
-# -- Compiling module DE1_SoC
-# -- Compiling module DE1_SoC_tb
-# 
-# Top level modules:
-# 	DE1_SoC_tb
-# End time: 19:37:22 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:37:22 on Oct 06,2023
-# vlog -reportprogress 300 ./parking_lot_occupancy.sv 
-# -- Compiling module parking_lot_occupancy
-# 
-# Top level modules:
-# 	parking_lot_occupancy
-# End time: 19:37:22 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:37:23 on Oct 06,2023, Elapsed time: 0:03:52
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb 
-# Start time: 19:37:23 on Oct 06,2023
-# Loading sv_std.std
-# Loading work.DE1_SoC_tb
-# Loading work.DE1_SoC
-# Loading work.parking_lot_occupancy
-# Loading work.car_detection
-# Loading work.car_counter
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./DE1_SoC.sv(129)
-#    Time: 160 ps  Iteration: 0  Instance: /DE1_SoC_tb
-# Break in Module DE1_SoC_tb at ./DE1_SoC.sv line 129
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:46:30 on Oct 06,2023
-# vlog -reportprogress 300 ./car_counter.sv 
-# -- Compiling module car_counter
-# -- Compiling module car_counter_tb
-# 
-# Top level modules:
-# 	car_counter_tb
-# End time: 19:46:30 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:46:30 on Oct 06,2023
-# vlog -reportprogress 300 ./car_detection.sv 
-# -- Compiling module car_detection
-# -- Compiling module car_detection_tb
-# 
-# Top level modules:
-# 	car_detection_tb
-# End time: 19:46:30 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:46:30 on Oct 06,2023
-# vlog -reportprogress 300 ./DE1_SoC.sv 
-# -- Compiling module DE1_SoC
-# -- Compiling module DE1_SoC_tb
-# 
-# Top level modules:
-# 	DE1_SoC_tb
-# End time: 19:46:30 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:46:30 on Oct 06,2023
-# vlog -reportprogress 300 ./parking_lot_occupancy.sv 
-# -- Compiling module parking_lot_occupancy
-# 
-# Top level modules:
-# 	parking_lot_occupancy
-# End time: 19:46:30 on Oct 06,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:46:34 on Oct 06,2023, Elapsed time: 0:09:11
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb 
-# Start time: 19:46:34 on Oct 06,2023
+# Start time: 20:44:09 on Oct 06,2023
 # Loading sv_std.std
 # Loading work.DE1_SoC_tb
 # Loading work.DE1_SoC
@@ -170,6 +55,3 @@ do runlab.do
 # ** Note: $stop    : ./DE1_SoC.sv(115)
 #    Time: 1540 ps  Iteration: 0  Instance: /DE1_SoC_tb
 # Break in Module DE1_SoC_tb at ./DE1_SoC.sv line 115
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/wave.do}
-# End time: 19:48:30 on Oct 06,2023, Elapsed time: 0:01:56
-# Errors: 0, Warnings: 0

@@ -10,23 +10,23 @@ cModel Technology
 Z0 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1
 vcar_counter
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1696646790
+Z2 !s110 1696650249
 !i10b 1
-!s100 7Hb48EY4?4ZPGlI6^M0=`3
-IAJcT^h;2c0UMMfNKm8K4Z3
+!s100 WmG[:6]PkKP]k4ABhY0i52
+I_f:GDM;6hWXzJeeiF^9Yn2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 car_counter_sv_unit
 S1
 R0
-Z5 w1696618353
+Z5 w1696647791
 Z6 8./car_counter.sv
 Z7 F./car_counter.sv
-L0 4
+L0 5
 Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1696646790.000000
+Z9 !s108 1696650249.000000
 Z10 !s107 ./car_counter.sv|
 Z11 !s90 -reportprogress|300|./car_counter.sv|
 !i113 1
@@ -81,16 +81,16 @@ vcar_detection
 R1
 R2
 !i10b 1
-!s100 kDjW>5Y0AJXDOg`Dakg]A1
-INIQn2RQdYZff;I@3gk_142
+!s100 SSIB[AC8gMFkXgXb_ZgWI3
+I8NO5XV<]jn`:WKajXBM<A0
 R3
 Z14 !s105 car_detection_sv_unit
 S1
 R0
-Z15 w1696577797
+Z15 w1696648403
 Z16 8./car_detection.sv
 Z17 F./car_detection.sv
-L0 3
+L0 4
 R8
 r1
 !s85 0
@@ -104,8 +104,8 @@ vcar_detection_tb
 R1
 R2
 !i10b 1
-!s100 DB?OoL1]nd3o^d`7VUZ8U3
-I3kfi8NzIDnj>eIRA]Hfkl3
+!s100 zX[;aVOF?bD_G`jU_HYk91
+ImoILIBkHh]gcOAW;J[S;P3
 R3
 R14
 S1
@@ -113,7 +113,7 @@ R0
 R15
 R16
 R17
-L0 84
+L0 83
 R8
 r1
 !s85 0
@@ -133,7 +133,7 @@ R3
 Z20 !s105 DE1_SoC_sv_unit
 S1
 R0
-Z21 w1696646785
+Z21 w1696647541
 Z22 8./DE1_SoC.sv
 Z23 F./DE1_SoC.sv
 L0 2
@@ -175,22 +175,45 @@ vparking_lot_occupancy
 R1
 R2
 !i10b 1
-!s100 _<C^<KYc`eCDY2XP:cLe41
-Ime74SklF>C69DYNo6>_9l0
+!s100 9<jL[:Ge;8H?AP<=8DgAA2
+IY5O[8B57NQ`jIHR5oR@=50
 R3
-!s105 parking_lot_occupancy_sv_unit
+Z26 !s105 parking_lot_occupancy_sv_unit
 S1
 R0
-w1696611272
-8./parking_lot_occupancy.sv
-F./parking_lot_occupancy.sv
-L0 3
+Z27 w1696648320
+Z28 8./parking_lot_occupancy.sv
+Z29 F./parking_lot_occupancy.sv
+L0 4
 R8
 r1
 !s85 0
 31
 R9
-!s107 ./parking_lot_occupancy.sv|
-!s90 -reportprogress|300|./parking_lot_occupancy.sv|
+Z30 !s107 ./parking_lot_occupancy.sv|
+Z31 !s90 -reportprogress|300|./parking_lot_occupancy.sv|
+!i113 1
+R12
+vparking_lot_occupancy_tb
+R1
+R2
+!i10b 1
+!s100 Je[Wzb:gmaYh]1^X^ME?`1
+I<;6P9=K^9>Q21HX2^VXYh2
+R3
+R26
+S1
+R0
+R27
+R28
+R29
+L0 19
+R8
+r1
+!s85 0
+31
+R9
+R30
+R31
 !i113 1
 R12

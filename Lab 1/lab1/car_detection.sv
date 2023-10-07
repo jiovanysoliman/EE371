@@ -80,6 +80,7 @@ module car_detection (clk, reset, outer, inner, enter, exit);
 	end
 endmodule // car_detection
 
+// testbench for the car detection module.
 module car_detection_tb();
 	logic clk, reset, outer, inner, enter, exit;
 	

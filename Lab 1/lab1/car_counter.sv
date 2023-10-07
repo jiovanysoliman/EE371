@@ -6,13 +6,13 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     input logic clk, reset, incr, decr; // Initialize inputs
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; // Initialize outputs
     
-    
+    // enumerate the possible values for ps and ns
     enum {S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16} ps, ns; // Simple PS, NS Counter FSM
     
     //Next state logic based on state diagram
     always_comb begin
         case (ps)
-            S0: begin
+            S0: begin // Clear0
                 HEX0 = 7'b1000000;
                 HEX1 = 7'b0101111;
                 HEX2 = 7'b0001000;
@@ -24,7 +24,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S1: begin
+            S1: begin //1
                 HEX0 = 7'b1111001;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -36,7 +36,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S2: begin
+            S2: begin //2
                 HEX0 = 7'b0100100;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -48,7 +48,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S3: begin
+            S3: begin //3
                 HEX0 = 7'b0110000;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -60,7 +60,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S4: begin
+            S4: begin //4
                 HEX0 = 7'b0011001;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -72,7 +72,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S5: begin
+            S5: begin //5
                 HEX0 = 7'b0010010;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -84,7 +84,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S6: begin
+            S6: begin //6
                 HEX0 = 7'b0000010;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -96,7 +96,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S7: begin
+            S7: begin //7
                 HEX0 = 7'b1111000;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -108,7 +108,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S8: begin
+            S8: begin //8
                 HEX0 = 7'b0000000;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -120,7 +120,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S9: begin
+            S9: begin //9
                 HEX0 = 7'b0011000;
                 HEX1 = 7'b1000000;
                 HEX2 = 7'b1111111;
@@ -132,7 +132,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S10: begin
+            S10: begin //10
                 HEX0 = 7'b1000000;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1111111;
@@ -144,7 +144,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S11: begin
+            S11: begin //11
                 HEX0 = 7'b1111001;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1111111;
@@ -156,7 +156,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S12: begin
+            S12: begin //12
                 HEX0 = 7'b0100100;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1111111;
@@ -168,7 +168,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S13: begin
+            S13: begin //13
                 HEX0 = 7'b0110000;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1111111;
@@ -180,7 +180,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S14: begin
+            S14: begin //14
                 HEX0 = 7'b0011001;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1111111;
@@ -192,7 +192,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S15: begin
+            S15: begin //15
                 HEX0 = 7'b0010010;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1111111;
@@ -204,7 +204,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 else ns = ps;
             end
             
-            S16: begin
+            S16: begin // Full16
                 HEX0 = 7'b0000010;
                 HEX1 = 7'b1111001;
                 HEX2 = 7'b1000111;
@@ -228,7 +228,7 @@ module car_counter(clk, reset, incr, decr, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     
 endmodule // car_counter
 
-
+// testbench for the car counter module
 module car_counter_tb();
 	logic clk, reset, incr, decr;
 	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Fri Oct 06 20:13:31 2023
+Fri Oct 06 22:48:15 2023
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 06 20:13:31 2023       ;
+; Analysis & Synthesis Status     ; Successful - Fri Oct 06 22:48:14 2023       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
@@ -284,19 +284,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Oct 06 20:13:23 2023
+    Info: Processing started: Fri Oct 06 22:48:07 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file parking_lot_occupancy.sv
     Info (12023): Found entity 1: parking_lot_occupancy File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/parking_lot_occupancy.sv Line: 4
-    Info (12023): Found entity 2: parking_lot_occupancy_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/parking_lot_occupancy.sv Line: 19
+    Info (12023): Found entity 2: parking_lot_occupancy_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/parking_lot_occupancy.sv Line: 20
 Info (12021): Found 2 design units, including 2 entities, in source file de1_soc.sv
     Info (12023): Found entity 1: DE1_SoC File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 2
-    Info (12023): Found entity 2: DE1_SoC_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 26
+    Info (12023): Found entity 2: DE1_SoC_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 27
 Info (12021): Found 2 design units, including 2 entities, in source file car_detection.sv
     Info (12023): Found entity 1: car_detection File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/car_detection.sv Line: 4
-    Info (12023): Found entity 2: car_detection_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/car_detection.sv Line: 83
+    Info (12023): Found entity 2: car_detection_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/car_detection.sv Line: 84
 Info (12021): Found 2 design units, including 2 entities, in source file car_counter.sv
     Info (12023): Found entity 1: car_counter File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/car_counter.sv Line: 5
     Info (12023): Found entity 2: car_counter_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/car_counter.sv Line: 232
@@ -304,9 +304,9 @@ Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
 Warning (10665): Bidirectional port "V_GPIO[29]" at DE1_SoC.sv(6) has a one-way connection to bidirectional port "V_GPIO[34]" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 6
 Warning (10665): Bidirectional port "V_GPIO[24]" at DE1_SoC.sv(6) has a one-way connection to bidirectional port "V_GPIO[32]" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 6
 Warning (10665): Bidirectional port "V_GPIO[23]" at DE1_SoC.sv(6) has a one-way connection to bidirectional port "V_GPIO[35]" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 6
-Info (12128): Elaborating entity "parking_lot_occupancy" for hierarchy "parking_lot_occupancy:parking" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 19
+Info (12128): Elaborating entity "parking_lot_occupancy" for hierarchy "parking_lot_occupancy:parking" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 20
 Info (12128): Elaborating entity "car_detection" for hierarchy "parking_lot_occupancy:parking|car_detection:detector" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/parking_lot_occupancy.sv Line: 10
-Info (12128): Elaborating entity "car_counter" for hierarchy "parking_lot_occupancy:parking|car_counter:counter" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/parking_lot_occupancy.sv Line: 13
+Info (12128): Elaborating entity "car_counter" for hierarchy "parking_lot_occupancy:parking|car_counter:counter" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/parking_lot_occupancy.sv Line: 14
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "V_GPIO[23]" has no driver File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 6
     Warning (13040): bidirectional pin "V_GPIO[24]" has no driver File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 1/lab1/DE1_SoC.sv Line: 6
@@ -361,8 +361,8 @@ Info (21057): Implemented 109 device resources after synthesis - the final resou
     Info (21060): Implemented 36 bidirectional pins
     Info (21061): Implemented 30 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
-    Info: Peak virtual memory: 4824 megabytes
-    Info: Processing ended: Fri Oct 06 20:13:31 2023
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Fri Oct 06 22:48:15 2023
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:05
 

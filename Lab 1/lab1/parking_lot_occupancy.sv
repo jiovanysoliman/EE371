@@ -10,7 +10,8 @@ module parking_lot_occupancy(clk, reset, inner, outer, HEX0, HEX1, HEX2, HEX3, H
 	car_detection detector (.clk(clk), .reset(reset), .outer(outer), .inner(inner), .enter(enter), .exit(exit)); 
 	
 	// instanciates a counter, and passess the below signals in the ports explicitly.
-	car_counter counter (.clk(clk), .reset(reset), .incr(enter), .decr(exit), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
+	car_counter counter (.clk(clk), .reset(reset), .incr(enter), .decr(exit),
+	.HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
 endmodule // parking_lot_occupancy 
 
