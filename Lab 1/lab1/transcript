@@ -55,3 +55,5 @@ do runlab.do
 # ** Note: $stop    : ./DE1_SoC.sv(115)
 #    Time: 1540 ps  Iteration: 0  Instance: /DE1_SoC_tb
 # Break in Module DE1_SoC_tb at ./DE1_SoC.sv line 115
+# End time: 22:49:56 on Oct 06,2023, Elapsed time: 2:05:47
+# Errors: 0, Warnings: 0
