@@ -1,0 +1,4 @@
+module task2 (memory_array);
+logic [2:0] memory_array [31:0];
+
+endmodule 
