@@ -1,9 +1,11 @@
 /* Top-level module for LandsLand hardware connections to implement the parking lot system.*/
-module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+module DE1_SoC (CLOCK_50, V_GPIO, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 
-	input logic CLOCK_50;	// 50MHz clock
-	input [9:0] SW;
+	input  logic CLOCK_50;	// 50MHz clock
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;	// active low
+	inout  logic [35:0] V_GPIO;	// expansion header 0 (LabsLand board)
+	
+	
 	
 	
 	
