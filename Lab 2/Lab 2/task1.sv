@@ -6,6 +6,7 @@ module task1(address, clock, data, wren, q);
 	output [2:0] q;
 	
 	ram32x3 ram1 (.address, .clock, .data, .wren, .q);
+	
 endmodule
 
 `timescale 1 ps / 1 ps
