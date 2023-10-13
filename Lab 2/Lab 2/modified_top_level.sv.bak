@@ -1,0 +1,21 @@
+module modified_top_level(CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+	input  logic CLOCK_50;	// 50MHz clock
+	input  logic [9:0] SW;
+	input  logic [3:0] KEY;
+	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;	// active low
+	
+	logic [4:0] Address;
+	logic [2:0] DataIn;
+	logic Write;
+	logic Clock;
+	logic [2:0] DataOut;
+	logic reset;
+	
+	assign DataIn = SW[3:1];
+	assign Address = SW[8:4];
+	assign Write = SW[0];
+	assign Clock = KEY[0];
+	assign reset = SW[9]; // 0 = task2, 1 = task3
+	
+	task2 t1 (.address(Address), .clock(Clock), .data(DataIn), .wren(Write), .q(DataOut));
+	task3 t2 (address, clock, data, wren, q);

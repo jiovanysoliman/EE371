@@ -1,0 +1,152 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:12:02 on Oct 13,2023
+# vlog -reportprogress 300 ./counter.sv 
+# -- Compiling module counter
+# ** Error: ./counter.sv(1): (vlog-2730) Undefined variable: 'HEX0'.
+# ** Error: ./counter.sv(1): Identifier must be declared with a port mode: HEX0.
+# ** Error: ./counter.sv(1): (vlog-2730) Undefined variable: 'HEX1'.
+# ** Error: ./counter.sv(1): Identifier must be declared with a port mode: HEX1.
+# ** Error: ./counter.sv(1): (vlog-2730) Undefined variable: 'HEX2'.
+# ** Error: ./counter.sv(1): Identifier must be declared with a port mode: HEX2.
+# ** Error: ./counter.sv(1): (vlog-2730) Undefined variable: 'HEX3'.
+# ** Error: ./counter.sv(1): Identifier must be declared with a port mode: HEX3.
+# ** Error: ./counter.sv(1): (vlog-2730) Undefined variable: 'HEX4'.
+# ** Error: ./counter.sv(1): Identifier must be declared with a port mode: HEX4.
+# ** Error: ./counter.sv(1): (vlog-2730) Undefined variable: 'HEX5'.
+# ** Error: ./counter.sv(1): Identifier must be declared with a port mode: HEX5.
+# -- Compiling module counter_tb
+# ** Error: ./counter.sv(44): (vlog-2730) Undefined variable: 'clock'.
+# End time: 11:12:02 on Oct 13,2023, Elapsed time: 0:00:00
+# Errors: 13, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./counter.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:12:20 on Oct 13,2023
+# vlog -reportprogress 300 ./counter.sv 
+# -- Compiling module counter
+# ** Error: ./counter.sv(2): In, out, or inout does not appear in port list: wordContent.
+# -- Compiling module counter_tb
+# ** Error: ./counter.sv(44): (vlog-2730) Undefined variable: 'clock'.
+# End time: 11:12:20 on Oct 13,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./counter.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:13:10 on Oct 13,2023
+# vlog -reportprogress 300 ./counter.sv 
+# -- Compiling module counter
+# -- Compiling module counter_tb
+# 
+# Top level modules:
+# 	counter_tb
+# End time: 11:13:10 on Oct 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
+# Start time: 11:13:10 on Oct 13,2023
+# Loading sv_std.std
+# Loading work.counter_tb
+# Loading work.counter
+# ** Error: (vsim-3043) ./counter.sv(51): Unresolved reference to 'tast1mem'.
+#    Time: 0 ps  Iteration: 0  Instance: /counter_tb File: ./counter.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 12
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:13:32 on Oct 13,2023
+# vlog -reportprogress 300 ./counter.sv 
+# -- Compiling module counter
+# -- Compiling module counter_tb
+# 
+# Top level modules:
+# 	counter_tb
+# End time: 11:13:32 on Oct 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
+# Start time: 11:13:10 on Oct 13,2023
+# Loading sv_std.std
+# Loading work.counter_tb
+# Loading work.counter
+# ** Error: Cannot open macro file: counter_tb__wave.do
+# Error in macro ./runlab.do line 17
+# Cannot open macro file: counter_tb__wave.do
+#     while executing
+# "do counter_tb__wave.do"
+add wave -position end  sim:/counter_tb/wordContent
+add wave -position 0  sim:/counter_tb/reset
+add wave -position 1  sim:/counter_tb/mem_select
+add wave -position 0  sim:/counter_tb/clk
+add wave -position end  sim:/counter_tb/task1mem
+add wave -position end  sim:/counter_tb/task2mem
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/EE371-Labs/Lab 2/Lab 2/counter_tb_wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:15:06 on Oct 13,2023
+# vlog -reportprogress 300 ./counter.sv 
+# -- Compiling module counter
+# -- Compiling module counter_tb
+# 
+# Top level modules:
+# 	counter_tb
+# End time: 11:15:06 on Oct 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 11:15:06 on Oct 13,2023, Elapsed time: 0:01:56
+# Errors: 4, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
+# Start time: 11:15:06 on Oct 13,2023
+# Loading sv_std.std
+# Loading work.counter_tb
+# Loading work.counter
+# ** Error: Cannot open macro file: counter_tb__wave.do
+# Error in macro ./runlab.do line 17
+# Cannot open macro file: counter_tb__wave.do
+#     while executing
+# "do counter_tb__wave.do"
+add wave -position end  sim:/counter_tb/clk
+add wave -position end  sim:/counter_tb/reset
+add wave -position end  sim:/counter_tb/mem_select
+add wave -position end  sim:/counter_tb/task1mem
+add wave -position end  sim:/counter_tb/task2mem
+add wave -position end  sim:/counter_tb/wordContent
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/EE371-Labs/Lab 2/Lab 2/counter_tb_wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:16:29 on Oct 13,2023
+# vlog -reportprogress 300 ./counter.sv 
+# -- Compiling module counter
+# -- Compiling module counter_tb
+# 
+# Top level modules:
+# 	counter_tb
+# End time: 11:16:29 on Oct 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 11:16:29 on Oct 13,2023, Elapsed time: 0:01:23
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
+# Start time: 11:16:29 on Oct 13,2023
+# Loading sv_std.std
+# Loading work.counter_tb
+# Loading work.counter
+# ** Error: Cannot open macro file: counter_tb__wave.do
+# Error in macro ./runlab.do line 17
+# Cannot open macro file: counter_tb__wave.do
+#     while executing
+# "do counter_tb__wave.do"
+# End time: 11:16:51 on Oct 13,2023, Elapsed time: 0:00:22
+# Errors: 3, Warnings: 0

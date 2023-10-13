@@ -65,5 +65,3 @@ module task3 (address, clock, data, wren, q);
 	end //always_ff	
 endmodule 
 	
-	
-endmodule
