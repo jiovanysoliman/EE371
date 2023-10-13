@@ -2,10 +2,7 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /counter_tb/clk
 add wave -noupdate /counter_tb/reset
-add wave -noupdate /counter_tb/mem_select
-add wave -noupdate /counter_tb/task1mem
-add wave -noupdate /counter_tb/task2mem
-add wave -noupdate /counter_tb/wordContent
+add wave -noupdate /counter_tb/addr
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}
 quietly wave cursor active 0
