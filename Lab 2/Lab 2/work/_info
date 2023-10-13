@@ -7,18 +7,18 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/EE371-Labs/Lab 2/Lab 2
+dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/EE371-Labs/Lab 2/Lab 2
 vcounter
-Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1697220989
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1697232868
 !i10b 1
-!s100 T:MOPDgo9L@O2==;6BZ@A3
-I64h=?HbZHO?zTYT`UQiFF3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 !s105 counter_sv_unit
+!s100 ;RbiU@cMbR2Wl<oBNZG=20
+IRi3zfVf<_j3?R@NZHNDTz2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 !s105 counter_sv_unit
 S1
-R0
-Z5 w1697220807
+Z4 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2
+Z5 w1697232798
 Z6 8./counter.sv
 Z7 F./counter.sv
 L0 1
@@ -26,25 +26,25 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1697220989.000000
+Z9 !s108 1697232867.000000
 Z10 !s107 ./counter.sv|
 Z11 !s90 -reportprogress|300|./counter.sv|
 !i113 1
 Z12 tCvgOpt 0
 vcounter_tb
-R1
-R2
-!i10b 1
-!s100 eonLOA_eH:M?RUU3fid343
-IQgV26eR70k[QZ^g3di<9=2
-R3
-R4
-S1
 R0
+R1
+!i10b 1
+!s100 Ho`cLT1XXXDbja:3]>eQR3
+I5:f?`f5O[G_K_;MP<QB4g3
+R2
+R3
+S1
+R4
 R5
 R6
 R7
-L0 33
+L0 18
 R8
 r1
 !s85 0
