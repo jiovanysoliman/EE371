@@ -1,0 +1,82 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/simulation/modelsim
+vram32x3
+Z1 !s110 1697251305
+!i10b 1
+!s100 >i_=LX@Q5h;U6@m4D`gHo2
+Ii_GEQHohLbP4^_RmWLO4E3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1696955022
+8C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/ram32x3.v
+FC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/ram32x3.v
+L0 40
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1697251305.000000
+!s107 C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/ram32x3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2|C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/ram32x3.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2}
+Z5 tCvgOpt 0
+vtask1
+Z6 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R1
+!i10b 1
+!s100 ilFHhiBmzd[DoJ^>gRQC[3
+IE2LXb>A@fXTMW4z4IG[jY1
+R2
+Z7 !s105 task1_sv_unit
+S1
+R0
+Z8 w1697251290
+Z9 8C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/task1.sv
+Z10 FC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/task1.sv
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+Z11 !s107 C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/task1.sv|
+Z12 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2|C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/task1.sv|
+!i113 1
+Z13 o-sv -work work
+Z14 !s92 -sv -work work {+incdir+C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2}
+R5
+vtask1_tb
+R6
+R1
+!i10b 1
+!s100 C2a4YnV9J1l^GWT8_R<RX1
+IX=9=^;Rb8WZMOcK[eF6fX3
+R2
+R7
+S1
+R0
+R8
+R9
+R10
+L0 20
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 1
+R13
+R14
+R5

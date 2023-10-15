@@ -1,41 +1,42 @@
-module counter(reset, clk, addr);
-	output logic [4:0] addr; // address of memory location being read
-	input  logic reset, clk;
+// simple implmentation of the counter module from 271.
+// reset, clock are 1 bit inputs.
+// count is a 5 bit output.
+module counter(reset, clock, count);
+	output logic [4:0] count; // address of memory location being read
+	input  logic reset, clock;
 	
-	always_ff @(posedge clk) begin
+	always_ff @(posedge clock) begin
 		if(reset)
-			addr <= 5'b0;
+			count <= 0;
 		else
 			begin
-				if(addr == 5'b11111)
-					addr <= 5'b0;
+				if(count == 31)
+					count <= 0;
 				else
-					addr <= addr + 5'b00001;
+					count <= count + 1;
 			end
 	end // always_ff
-endmodule
+endmodule // counter
 
+// 
 module counter_tb ();
 
-logic reset, clk;
-logic [4:0] addr;
+	logic reset, clock;
+	logic [4:0] count;
 
-parameter CLOCK_PERIOD = 10;
-initial begin
-clk <= 0;
-	forever #(CLOCK_PERIOD/2) clk <= ~clk; // forever toggle the clock
-end
+	parameter CLOCK_PERIOD = 10;
+	initial begin
+	clock <= 0;
+		forever #(CLOCK_PERIOD/2) clock <= ~clock; // forever toggle the clock
+	end
 
-counter dut (.*);
+	counter dut (.*);
 
-initial begin
+	initial begin
 
-	reset <= 1; @(posedge clk);
-	reset <= 0; repeat (35) @(posedge clk);
-	
-	$stop;
-	
-
-end
-
-endmodule 
+		reset <= 1; @(posedge clock);
+		reset <= 0; repeat (35) @(posedge clock);
+		
+		$stop;
+	end
+endmodule // counter_tb

@@ -1,5 +1,5 @@
 Flow report for DE1_SoC
-Fri Oct 13 13:39:11 2023
+Sat Oct 14 00:12:55 2023
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Fri Oct 13 13:39:11 2023       ;
+; Flow Status                 ; Successful - Sat Oct 14 00:12:55 2023       ;
 ; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name               ; DE1_SoC                                     ;
-; Top-level Entity Name       ; modified_top_level                          ;
+; Top-level Entity Name       ; task1                                       ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,34 +63,34 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/13/2023 13:39:04 ;
+; Start date & time ; 10/14/2023 00:12:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                   ;
-+-------------------------------------+----------------------------------------+---------------+--------------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name        ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+--------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1095557389721.169722954424852          ; --            ; --                 ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --                 ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --                 ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                 ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                 ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                 ; --             ;
-; MISC_FILE                           ; ram32x3_bb.v                           ; --            ; --                 ; --             ;
-; MISC_FILE                           ; ram32x3port2_bb.v                      ; --            ; --                 ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; modified_top_level ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; modified_top_level ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; modified_top_level ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                 ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                 ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                 ; --             ;
-; STATE_MACHINE_PROCESSING            ; User-Encoded                           ; Auto          ; --                 ; --             ;
-; TOP_LEVEL_ENTITY                    ; modified_top_level                     ; DE1_SoC       ; --                 ; --             ;
-+-------------------------------------+----------------------------------------+---------------+--------------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 1095557389721.169726756819984          ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
+; MISC_FILE                           ; ram32x3_bb.v                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; ram32x3port2_bb.v                      ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; task1       ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; task1       ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; task1       ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
+; STATE_MACHINE_PROCESSING            ; User-Encoded                           ; Auto          ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; task1                                  ; DE1_SoC       ; --          ; --             ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+

@@ -2,88 +2,281 @@
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:32:49 on Oct 13,2023
-# vlog -reportprogress 300 ./counter.sv 
-# -- Compiling module counter
-# -- Compiling module counter_tb
-# ** Error: (vlog-13069) ./counter.sv(24): near "<=": syntax error, unexpected <=.
-# ** Error: ./counter.sv(24): (vlog-13205) Syntax error found in the scope following 'clk'. Is there a missing '::'?
-# End time: 14:32:49 on Oct 13,2023, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./runlab.do line 7
-# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog "./counter.sv""
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:33:25 on Oct 13,2023
-# vlog -reportprogress 300 ./counter.sv 
-# -- Compiling module counter
-# -- Compiling module counter_tb
+# Start time: 00:22:12 on Oct 14,2023
+# vlog -reportprogress 300 ./task1.sv 
+# -- Compiling module task1
+# -- Compiling module task1_tb
 # 
 # Top level modules:
-# 	counter_tb
-# End time: 14:33:25 on Oct 13,2023, Elapsed time: 0:00:00
+# 	task1_tb
+# End time: 00:22:12 on Oct 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
-# Start time: 14:33:25 on Oct 13,2023
+# vsim -voptargs=""+acc"" -t 1ps -lib work task1_tb -Lf altera_mf_ver 
+# Start time: 00:22:12 on Oct 14,2023
 # Loading sv_std.std
-# Loading work.counter_tb
-# Loading work.counter
-# ** Error: Cannot open macro file: counter_tb__wave.do
-# Error in macro ./runlab.do line 17
-# Cannot open macro file: counter_tb__wave.do
-#     while executing
-# "do counter_tb__wave.do"
+# Loading work.task1_tb
+# Loading work.task1
+# Loading work.ram32x3
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/SW'.
+# Executing ONERROR command at macro ./wave.do line 3
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/KEY'.
+# Executing ONERROR command at macro ./wave.do line 4
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/HEX0'.
+# Executing ONERROR command at macro ./wave.do line 5
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/HEX1'.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/HEX2'.
+# Executing ONERROR command at macro ./wave.do line 7
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/HEX3'.
+# Executing ONERROR command at macro ./wave.do line 8
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/HEX4'.
+# Executing ONERROR command at macro ./wave.do line 9
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/HEX5'.
+# Executing ONERROR command at macro ./wave.do line 10
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/Address'.
+# Executing ONERROR command at macro ./wave.do line 11
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/DataIn'.
+# Executing ONERROR command at macro ./wave.do line 12
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/DataOut'.
+# Executing ONERROR command at macro ./wave.do line 13
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/Write'.
+# Executing ONERROR command at macro ./wave.do line 14
+# ** Error: (vish-4014) No objects found matching '/modified_top_level_tb/dut/Clock'.
+# Executing ONERROR command at macro ./wave.do line 15
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./task1.sv(70)
+#    Time: 12750 ps  Iteration: 1  Instance: /task1_tb
+# Break in Module task1_tb at ./task1.sv line 70
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/wave.do}
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:33:45 on Oct 13,2023
-# vlog -reportprogress 300 ./counter.sv 
-# -- Compiling module counter
-# -- Compiling module counter_tb
+# Start time: 00:22:33 on Oct 14,2023
+# vlog -reportprogress 300 ./task1.sv 
+# -- Compiling module task1
+# -- Compiling module task1_tb
 # 
 # Top level modules:
-# 	counter_tb
-# End time: 14:33:45 on Oct 13,2023, Elapsed time: 0:00:00
+# 	task1_tb
+# End time: 00:22:33 on Oct 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 14:33:46 on Oct 13,2023, Elapsed time: 0:00:21
-# Errors: 3, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
-# Start time: 14:33:46 on Oct 13,2023
+# End time: 00:22:34 on Oct 14,2023, Elapsed time: 0:00:22
+# Errors: 39, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work task1_tb -Lf altera_mf_ver 
+# Start time: 00:22:34 on Oct 14,2023
 # Loading sv_std.std
-# Loading work.counter_tb
-# Loading work.counter
-# ** Error: Cannot open macro file: counter_tb__wave.do
-# Error in macro ./runlab.do line 17
-# Cannot open macro file: counter_tb__wave.do
-#     while executing
-# "do counter_tb__wave.do"
-do runlab.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:34:27 on Oct 13,2023
-# vlog -reportprogress 300 ./counter.sv 
-# -- Compiling module counter
-# -- Compiling module counter_tb
-# 
-# Top level modules:
-# 	counter_tb
-# End time: 14:34:28 on Oct 13,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# End time: 14:34:28 on Oct 13,2023, Elapsed time: 0:00:42
-# Errors: 3, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work counter_tb 
-# Start time: 14:34:28 on Oct 13,2023
-# Loading sv_std.std
-# Loading work.counter_tb
-# Loading work.counter
+# Loading work.task1_tb
+# Loading work.task1
+# Loading work.ram32x3
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./counter.sv(36)
-#    Time: 355 ps  Iteration: 1  Instance: /counter_tb
-# Break in Module counter_tb at ./counter.sv line 36
+# ** Note: $stop    : ./task1.sv(70)
+#    Time: 12750 ps  Iteration: 1  Instance: /task1_tb
+# Break in Module task1_tb at ./task1.sv line 70
+add wave -position end sim:/task1_tb/*
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:28:32 on Oct 14,2023
+# vlog -reportprogress 300 ./task1.sv 
+# -- Compiling module task1
+# -- Compiling module task1_tb
+# 
+# Top level modules:
+# 	task1_tb
+# End time: 00:28:32 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:28:33 on Oct 14,2023, Elapsed time: 0:05:59
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work task1_tb -Lf altera_mf_ver 
+# Start time: 00:28:33 on Oct 14,2023
+# Loading sv_std.std
+# Loading work.task1_tb
+# Loading work.task1
+# Loading work.ram32x3
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./task1.sv(70)
+#    Time: 12750 ps  Iteration: 1  Instance: /task1_tb
+# Break in Module task1_tb at ./task1.sv line 70
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:04 on Oct 14,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 00:32:04 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:04 on Oct 14,2023
+# vlog -reportprogress 300 ./task1.sv 
+# -- Compiling module task1
+# -- Compiling module task1_tb
+# 
+# Top level modules:
+# 	task1_tb
+# End time: 00:32:04 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:04 on Oct 14,2023
+# vlog -reportprogress 300 ./ram32x3.v 
+# -- Compiling module ram32x3
+# 
+# Top level modules:
+# 	ram32x3
+# End time: 00:32:04 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:05 on Oct 14,2023
+# vlog -reportprogress 300 ./task2.sv 
+# -- Compiling module task2
+# -- Compiling module task2_tb
+# 
+# Top level modules:
+# 	task2_tb
+# End time: 00:32:05 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:05 on Oct 14,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module DE1_SoC_tb
+# 
+# Top level modules:
+# 	DE1_SoC_tb
+# End time: 00:32:05 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:32:05 on Oct 14,2023, Elapsed time: 0:03:32
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb 
+# Start time: 00:32:05 on Oct 14,2023
+# Loading sv_std.std
+# Loading work.DE1_SoC_tb
+# Loading work.DE1_SoC
+# Loading work.task2
+# Loading work.seg7
+# ** Warning: (vsim-3015) ./DE1_SoC.sv(26): [PCDPC] - Port size (4) does not match connection size (1) for port 'hex'. The port definition is at: ./seg7.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_SoC_tb/dut/AddressValueHex5 File: ./seg7.sv
+# ** Warning: (vsim-3015) ./DE1_SoC.sv(30): [PCDPC] - Port size (4) does not match connection size (3) for port 'hex'. The port definition is at: ./seg7.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_SoC_tb/dut/DataInHex1 File: ./seg7.sv
+# ** Warning: (vsim-3015) ./DE1_SoC.sv(33): [PCDPC] - Port size (4) does not match connection size (3) for port 'hex'. The port definition is at: ./seg7.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_SoC_tb/dut/DataOutHex0 File: ./seg7.sv
+# ** Error: (vish-4014) No objects found matching '/task1_tb/address'.
+# Executing ONERROR command at macro ./wave.do line 3
+# ** Error: (vish-4014) No objects found matching '/task1_tb/clock'.
+# Executing ONERROR command at macro ./wave.do line 4
+# ** Error: (vish-4014) No objects found matching '/task1_tb/data'.
+# Executing ONERROR command at macro ./wave.do line 5
+# ** Error: (vish-4014) No objects found matching '/task1_tb/wren'.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** Error: (vish-4014) No objects found matching '/task1_tb/q'.
+# Executing ONERROR command at macro ./wave.do line 7
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./DE1_SoC.sv(73)
+#    Time: 12750 ps  Iteration: 1  Instance: /DE1_SoC_tb
+# Break in Module DE1_SoC_tb at ./DE1_SoC.sv line 73
+add wave -position end  sim:/DE1_SoC_tb/CLOCK_PERIOD
+add wave -position end  sim:/DE1_SoC_tb/SW
+add wave -position end  sim:/DE1_SoC_tb/KEY
+add wave -position end  sim:/DE1_SoC_tb/HEX0
+add wave -position end  sim:/DE1_SoC_tb/HEX1
+add wave -position end  sim:/DE1_SoC_tb/HEX2
+add wave -position end  sim:/DE1_SoC_tb/HEX3
+add wave -position end  sim:/DE1_SoC_tb/HEX4
+add wave -position end  sim:/DE1_SoC_tb/HEX5
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2/wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:25 on Oct 14,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 00:32:25 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:25 on Oct 14,2023
+# vlog -reportprogress 300 ./task1.sv 
+# -- Compiling module task1
+# -- Compiling module task1_tb
+# 
+# Top level modules:
+# 	task1_tb
+# End time: 00:32:25 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:25 on Oct 14,2023
+# vlog -reportprogress 300 ./ram32x3.v 
+# -- Compiling module ram32x3
+# 
+# Top level modules:
+# 	ram32x3
+# End time: 00:32:25 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:25 on Oct 14,2023
+# vlog -reportprogress 300 ./task2.sv 
+# -- Compiling module task2
+# -- Compiling module task2_tb
+# 
+# Top level modules:
+# 	task2_tb
+# End time: 00:32:25 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:32:25 on Oct 14,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# -- Compiling module DE1_SoC_tb
+# 
+# Top level modules:
+# 	DE1_SoC_tb
+# End time: 00:32:25 on Oct 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:32:26 on Oct 14,2023, Elapsed time: 0:00:21
+# Errors: 15, Warnings: 3
+# vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb 
+# Start time: 00:32:26 on Oct 14,2023
+# Loading sv_std.std
+# Loading work.DE1_SoC_tb
+# Loading work.DE1_SoC
+# Loading work.task2
+# Loading work.seg7
+# ** Warning: (vsim-3015) ./DE1_SoC.sv(26): [PCDPC] - Port size (4) does not match connection size (1) for port 'hex'. The port definition is at: ./seg7.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_SoC_tb/dut/AddressValueHex5 File: ./seg7.sv
+# ** Warning: (vsim-3015) ./DE1_SoC.sv(30): [PCDPC] - Port size (4) does not match connection size (3) for port 'hex'. The port definition is at: ./seg7.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_SoC_tb/dut/DataInHex1 File: ./seg7.sv
+# ** Warning: (vsim-3015) ./DE1_SoC.sv(33): [PCDPC] - Port size (4) does not match connection size (3) for port 'hex'. The port definition is at: ./seg7.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /DE1_SoC_tb/dut/DataOutHex0 File: ./seg7.sv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./DE1_SoC.sv(73)
+#    Time: 12750 ps  Iteration: 1  Instance: /DE1_SoC_tb
+# Break in Module DE1_SoC_tb at ./DE1_SoC.sv line 73
+# End time: 01:15:53 on Oct 14,2023, Elapsed time: 0:43:27
+# Errors: 0, Warnings: 3

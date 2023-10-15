@@ -1,132 +1,122 @@
-module main (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+module modified_top_level (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	input  logic CLOCK_50;	// 50MHz clock
 	input  logic [9:0] SW;
 	input  logic [3:0] KEY;
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;	// active low
-	
-	logic [4:0] Address;
-	logic [2:0] DataIn;
-	logic Write;	
-	logic reset;
-	logic select;
 	logic [2:0] DataOut1;
 	logic [2:0] DataOut2;
 	logic [2:0] dataDisplay;
-	logic [4:0] address1, address2; //switch, addr value, select, real addr
 	logic wren1, wren2; //wren1 = task2, wren2 = task3
 	logic [4:0] readAddr; // for ram32x3port2
-	
-	logic clkSelect;
-	logic [31:0] clk;
-	parameter whichclk = 25;
-	clock_divider cdiv (.clock(CLOCK_50), .divided_clocks(clk));
-	assign clkSelect = clk[whichclk];
-	
-	assign DataIn = SW[3:1];
-	assign Address = SW[8:4];
-	assign Write = SW[0];
-	assign reset = KEY[3];
-	assign select = SW[9]; // 0 = task2, 1 = task3
+	logic CounterClock;
 	
 	
 	always_comb
-		case(select)
-			1'b0: 
+		case(SW[9])
+			0: 
 				begin
-					address1 = Address;
-					address2 = Address;
-					wren1 = Write;
-					wren2 = 0;
+					wren1 = SW[9];
+					wren2 = ~SW[9];
 					dataDisplay = DataOut1;
 				end
-			1'b1: 
+			1: 
 				begin
-					address1 = Address;
-					address2 = Address;
-					wren1 = 0;
-					wren2 = Write;
+					wren1 = ~SW[9];
+					wren2 = SW[9];
 					dataDisplay = DataOut2;
 				end
 				
 			default: 
 				begin
-					address1 = Address;
-					address2 = Address;
-					wren1 = 0;
-					wren2 = 0;
-					dataDisplay = DataOut2;
+					wren1 = ~SW[9];
+					wren2 = ~SW[9];
+					dataDisplay = DataOut1;
 				end
 		endcase
 	
+	clock_divider cdiv (.clock(CLOCK_50), .divided_clocks(CounterClock));
 	
-	
-// 	counter c (.reset(reset), .clk(clkSelect), .addr(readAddr));
-    // assign readAddr[4:0] = 1;
-    
-    always_ff @(posedge clkSelect) begin  
-	    if(reset) begin
-	        readAddr <= 0;
-	       end
-	    else begin 
-	        readAddr <= readAddr + 1;
-	        end
-	end //always_ff
-    
-// 	task2 t2 (.address(address1), .clock(clkSelect), .data(DataIn), .wren(wren1), .q(DataOut1));
-// 	ram32x3port2 r (.clock(clkSelect), .data(DataIn), .rdaddress(readAddr), .wraddress(address2), .wren(wren2), .q(DataOut2));
-	
-	// Display the read address for task 1
-	seg7 addrDisplay1 (.hex(SW[8]), .leds(HEX5));
-	seg7 addrDisplay2 (.hex(SW[7:4]), .leds(HEX4));
-	
-	
-	
-		// Display the read address for task 2
-	seg7 addrDisplay3 (.hex(readAddr[4]), .leds(HEX3));
-	seg7 addrDisplay4 (.hex(readAddr[3:0]), .leds(HEX2));
+ 	counter c (.reset(~KEY[3]), .clock(CounterClock), .count(readAddr));
+ 	
+ 	logic [4:0] readAddrbuff;
+ 	
+ 	D_FF d1(.q(readAddrbuff[4]), .d(readAddr[4]), .reset(~KEY[3]), .clk(CLOCK_50));
+ 	D_FF d2(.q(readAddrbuff[3]), .d(readAddr[3]), .reset(~KEY[3]), .clk(CLOCK_50));
+ 	D_FF d3(.q(readAddrbuff[2]), .d(readAddr[2]), .reset(~KEY[3]), .clk(CLOCK_50));
+ 	D_FF d4(.q(readAddrbuff[1]), .d(readAddr[1]), .reset(~KEY[3]), .clk(CLOCK_50));
+ 	D_FF d5(.q(readAddrbuff[0]), .d(readAddr[0]), .reset(~KEY[3]), .clk(CLOCK_50));
 
-	// Display data in
-	seg7 dataInDisplay (.hex(SW[3:1]), .leds(HEX1));
+    
+	// Makes an instance of task2 that's driven by DE1_SoC inputs and drives its outputs.
+	task2 RAM (.address(SW[8:4]), .clock(KEY[0]), .data(SW[3:1]), .wren(wren1), .q(DataOut1[2:0]));
+	
+	// Make an instance of task3 that's driven by the counter and inputs from DE1_SoC.
+ 	ram32x3port2 RAM2Port (.clock(CLOCK_50), .data(SW[3:1]), .rdaddress(readAddr), .wraddress(SW[8:4]), .wren(wren2), .q(DataOut2));
+	
+	
+	// Display the address values on HEX5 and HEX4
+	seg7 AddressValueHex5 (.hex(SW[8]), .leds(HEX5));
+	seg7 AddressValueHex4 (.hex(SW[7:4]), .leds(HEX4));
+	
+	
+	// Display the read address for task 2
+	seg7 addrDisplay3 (.hex(readAddrbuff[4]), .leds(HEX3));
+	seg7 addrDisplay4 (.hex(readAddrbuff[3:0]), .leds(HEX2));
 
-	// Display data out
-	seg7 dataOutDisplay (.hex(dataDisplay), .leds(HEX0));
-	
-	
+	// Display data in value on HEX1
+	seg7 DataInHex1 (.hex(SW[3:1]), .leds(HEX1));
 	
 endmodule
 
-module clock_divider (clock, divided_clocks);
-	input logic clock;
-	output logic [31:0] divided_clocks;
+module D_FF (q, d, reset, clk);
+    input  logic d, clk, reset;
+    output logic q;
+    
+    always_ff @(posedge clk) begin 
+        if(reset)
+            q <= 0;
+        else
+            q <= d;
+    end
+endmodule
 
+///* Test bench for the DE1_SoC modified module */
+module modified_top_level_tb ();
+	logic CLOCK_50;
+	logic [9:0] SW;
+	logic [3:0] KEY;
+	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	
+	DE1_SoC dut(.*);
+	
+	// Set up a simulated clock
+	parameter CLOCK_PERIOD = 100;
 	initial begin
-		divided_clocks <= 0;
+		CLOCK_50 <= 0;
+		forever #(CLOCK_PERIOD/2) CLOCK_50 <= ~CLOCK_50; // forever toggle the clock
 	end
-
-	always_ff @(posedge clock) begin
-		divided_clocks <= divided_clocks + 1;
-   end
-endmodule
-
-/* NOTES:
-	SW9 toggles between memory task 2 and task 3
-	SW8 - SW4 sets write address 
-	SW3 - SW1 sets write data
 	
-	KEY0 reset
-	
-	Display on HEX3 - HEX2 read address
-	Dispaly on HEX0 content of memory at address
-	
-*/
-
-//ram32x3port2 (clock,	data,	rdaddress,	wraddress,	wren,	q);
-//
-//	input	  clock;
-//	input	[2:0]  data;
-//	input	[4:0]  rdaddress;
-//	input	[4:0]  wraddress;
-//	input	  wren;
-//	output	[2:0]  q;
-	
-	
+	initial begin
+		
+		integer i;
+		
+		// goes through each memory address
+		// sets the data at memory address to memory address
+		// write enabled.
+		for (i = 0; i <= 31; i++) begin
+			SW[9] = 1; 
+			SW[8:4] = i; @(posedge CLOCK_50);
+			SW[3:1] = i; @(posedge CLOCK_50);
+		end
+		
+		// goes through each memory address
+		// sets data at each memory address to zero
+		// write not enabled
+		for (i = 0; i <= 31; i++) begin
+			SW[9] = 0; 
+			SW[8:4] = i; @(posedge CLOCK_50);
+			SW[3:1] = 0; @(posedge CLOCK_50);
+		end
+	$stop;
+	end
+endmodule // modified_top_level_tb

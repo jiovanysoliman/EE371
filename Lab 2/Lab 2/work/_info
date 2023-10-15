@@ -8,49 +8,325 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/EE371-Labs/Lab 2/Lab 2
-vcounter
+vclock_divider
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1697232868
+Z1 !s110 1697266260
 !i10b 1
-!s100 ;RbiU@cMbR2Wl<oBNZG=20
-IRi3zfVf<_j3?R@NZHNDTz2
+!s100 BVM2BjN3XFI<<1YeKK85P1
+ILj?Hmc4`[BzbSz3_2m>7N2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 !s105 counter_sv_unit
+!s105 clock_divider_sv_unit
 S1
-Z4 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2
-Z5 w1697232798
-Z6 8./counter.sv
-Z7 F./counter.sv
-L0 1
-Z8 OV;L;10.5b;63
+Z3 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 2/Lab 2
+w1697263019
+8./clock_divider.sv
+F./clock_divider.sv
+L0 2
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1697232867.000000
-Z10 !s107 ./counter.sv|
-Z11 !s90 -reportprogress|300|./counter.sv|
+Z5 !s108 1697266260.000000
+!s107 ./clock_divider.sv|
+!s90 -reportprogress|300|./clock_divider.sv|
 !i113 1
-Z12 tCvgOpt 0
+Z6 tCvgOpt 0
+vcounter
+R0
+Z7 !s110 1697266360
+!i10b 1
+!s100 ^6PEPh=hjFiUWkFAP[QJR2
+I_:;c1Xf<6P_H9J2@4jb=<0
+R2
+Z8 !s105 counter_sv_unit
+S1
+R3
+Z9 w1697264606
+Z10 8./counter.sv
+Z11 F./counter.sv
+L0 4
+R4
+r1
+!s85 0
+31
+Z12 !s108 1697266360.000000
+Z13 !s107 ./counter.sv|
+Z14 !s90 -reportprogress|300|./counter.sv|
+!i113 1
+R6
 vcounter_tb
 R0
-R1
-!i10b 1
-!s100 Ho`cLT1XXXDbja:3]>eQR3
-I5:f?`f5O[G_K_;MP<QB4g3
-R2
-R3
-S1
-R4
-R5
-R6
 R7
-L0 18
+!i10b 1
+!s100 Zl4><dbF?CKTR4ae]KaaT3
+ISVMZSzVCZP923GGN5J8mV2
+R2
 R8
-r1
-!s85 0
-31
+S1
+R3
 R9
 R10
 R11
-!i113 1
+L0 22
+R4
+r1
+!s85 0
+31
 R12
+R13
+R14
+!i113 1
+R6
+vD_FF
+R0
+R7
+!i10b 1
+!s100 KmgHinC<=D5dM9=JcKleo3
+Ih=kh77RDTTQ989Q=N5?b41
+R2
+Z15 !s105 modified_top_level_sv_unit
+S1
+R3
+Z16 w1697266350
+Z17 8./modified_top_level.sv
+Z18 F./modified_top_level.sv
+L0 71
+R4
+r1
+!s85 0
+31
+R12
+Z19 !s107 ./modified_top_level.sv|
+Z20 !s90 -reportprogress|300|./modified_top_level.sv|
+!i113 1
+R6
+n@d_@f@f
+vDE1_SoC
+R0
+Z21 !s110 1697268745
+!i10b 1
+!s100 A@Yh04@XTi8E;6<BN2[[j1
+IhAe2jPDNQncfEQYKRTHG20
+R2
+Z22 !s105 DE1_SoC_sv_unit
+S1
+R3
+Z23 w1697260708
+Z24 8./DE1_SoC.sv
+Z25 F./DE1_SoC.sv
+L0 5
+R4
+r1
+!s85 0
+31
+Z26 !s108 1697268745.000000
+Z27 !s107 ./DE1_SoC.sv|
+Z28 !s90 -reportprogress|300|./DE1_SoC.sv|
+!i113 1
+R6
+n@d@e1_@so@c
+vDE1_SoC_tb
+R0
+R21
+!i10b 1
+!s100 ?H2M;iKmkJL?gY=1lSUah0
+I0<JmjH_DEALhKei>ZK_?93
+R2
+R22
+S1
+R3
+R23
+R24
+R25
+L0 39
+R4
+r1
+!s85 0
+31
+R26
+R27
+R28
+!i113 1
+R6
+n@d@e1_@so@c_tb
+vmodified_top_level
+R0
+R7
+!i10b 1
+!s100 1X1>6Ij@kV53lQC8OD4hN1
+I7k?b=0ghRIzW19DRH9D=93
+R2
+R15
+S1
+R3
+R16
+R17
+R18
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+R19
+R20
+!i113 1
+R6
+vmodified_top_level_tb
+R0
+R1
+!i10b 1
+!s100 =f[nb4;d1AYQn15mOj^@V2
+IXkh[Rha<aW5J>3QdbD]W10
+R2
+R15
+S1
+R3
+w1697266080
+R17
+R18
+L0 84
+R4
+r1
+!s85 0
+31
+R5
+R19
+R20
+!i113 1
+R6
+vram32x3
+R21
+!i10b 1
+!s100 >i_=LX@Q5h;U6@m4D`gHo2
+IF9LFi]JIjV5GI?6l5GF;h1
+R2
+R3
+w1696955022
+8./ram32x3.v
+F./ram32x3.v
+L0 40
+R4
+r1
+!s85 0
+31
+R26
+!s107 ./ram32x3.v|
+!s90 -reportprogress|300|./ram32x3.v|
+!i113 1
+R6
+vseg7
+R0
+R21
+!i10b 1
+!s100 jj9HOZ_?ONU=EkYa?Y1[J2
+IOHV<;HWWTn3d95DFVdPKk1
+R2
+!s105 seg7_sv_unit
+S1
+R3
+w1696951708
+8./seg7.sv
+F./seg7.sv
+L0 10
+R4
+r1
+!s85 0
+31
+R26
+!s107 ./seg7.sv|
+!s90 -reportprogress|300|./seg7.sv|
+!i113 1
+R6
+vtask1
+R0
+R21
+!i10b 1
+!s100 H0;YhS:V5iz1N;^0`Z4gP1
+I6abfP<clc6?B800NRJ:Kz1
+R2
+Z29 !s105 task1_sv_unit
+S1
+R3
+Z30 w1697254388
+Z31 8./task1.sv
+Z32 F./task1.sv
+L0 7
+R4
+r1
+!s85 0
+31
+R26
+Z33 !s107 ./task1.sv|
+Z34 !s90 -reportprogress|300|./task1.sv|
+!i113 1
+R6
+vtask1_tb
+R0
+R21
+!i10b 1
+!s100 95N3L:NEjCMoBTM`BLOLT2
+Il]JC[Yam@^DcW59jPFFJC3
+R2
+R29
+S1
+R3
+R30
+R31
+R32
+L0 34
+R4
+r1
+!s85 0
+31
+R26
+R33
+R34
+!i113 1
+R6
+vtask2
+R0
+R21
+!i10b 1
+!s100 IzQZL9K2CSBJJN6QB]0^z0
+I42]3B?nMmHhd=N6n[a<lJ0
+R2
+Z35 !s105 task2_sv_unit
+S1
+R3
+Z36 w1697260209
+Z37 8./task2.sv
+Z38 F./task2.sv
+L0 7
+R4
+r1
+!s85 0
+31
+R26
+Z39 !s107 ./task2.sv|
+Z40 !s90 -reportprogress|300|./task2.sv|
+!i113 1
+R6
+vtask2_tb
+R0
+R21
+!i10b 1
+!s100 Yi1aO8zjn<aS`[6@k5@?l2
+IO@1SCX;Nfa8PhBda14bH40
+R2
+R35
+S1
+R3
+R36
+R37
+R38
+L0 42
+R4
+r1
+!s85 0
+31
+R26
+R39
+R40
+!i113 1
+R6
