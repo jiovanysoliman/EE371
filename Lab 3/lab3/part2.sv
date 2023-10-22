@@ -1,10 +1,8 @@
-module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
+module part2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
 		        AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT, AUD_DACDAT);
 
 	input CLOCK_50, CLOCK2_50;
 	input [0:0] KEY;
-	input logic [9:0] SW;
-	
 	// I2C Audio/Video config interface
 	output FPGA_I2C_SCLK;
 	inout FPGA_I2C_SDAT;
@@ -21,6 +19,11 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	wire reset = ~KEY[0];
 	logic [16:0]  address;
 	logic [23:0]  q;
+
+	/////////////////////////////////
+	// Your code goes here 
+	/////////////////////////////////
+	
 	
 	always_ff @(posedge CLOCK_50) begin
 		if (address == 95999) address <= 0;
@@ -30,11 +33,10 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	
 	ROM_1port ROM (.address(address), .clock(CLOCK_50), .q(q));
 	
-	assign writedata_left = SW[9] ? q : readdata_left;
-	assign writedata_right = SW[9] ? q : readdata_right;
+	assign writedata_left = q;
+	assign writedata_right = q;
 	assign read = read_ready && write_ready;
 	assign write = read_ready && write_ready;
-
 	
 /////////////////////////////////////////////////////////////////////////////////
 // Audio CODEC interface. 
@@ -91,3 +93,5 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	);
 
 endmodule
+
+
