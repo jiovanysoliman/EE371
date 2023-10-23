@@ -1,30 +1,30 @@
-module part3 #(parameter N) (CLOCK_50, reset, DataIn, DataOut, 
+module part3 #(parameter N = 8) (CLOCK_50, reset, DataInTop, DataOutTop); 
 
 	input logic [23:0] DataInTop;
 	output logic [23:0] DataOutTop;
-	logic [23/N:0] divided;
-	logic [23/N:0] multiplicator;
-	logic [23/N:0] adder1;
-	logic [23/N:0] adder2;
+	logic [23:0] DataOut;
+	input logic CLOCK_50, reset;
+	logic [23:0] divided;
+	logic [23:0] multiplicator;
+	logic [23:0] adder1;
+	logic [23:0] adder2;
+	logic full;
+	logic [23:0] accumulator;
+	logic empty;
 	
-	// wrong
-	logic accumulator;
-	
-	// wrong
 	always_comb begin
-		assign divided = {{N{DataInTop[w-1]}}, DataInTop[w-1:n]};
-		assign multiplicator = DataOut * -1;
-		assign adder1 =  multiplicator + DataInTop;
-		assign adder2 = adder1 + ???;
+		divided = {{N{DataInTop[23]}}, DataInTop[23:N]};
+		multiplicator = DataOut * 24'sb1;
+		adder2 = multiplicator + divided + accumulator;
+		DataOutTop = adder2;
 	end
 
-	// wrong
 	always_ff @(posedge CLOCK_50) begin
-		assign accumulator <= adder2;
-		assign DataOutTop <= adder2;
+		if (reset) accumulator <= 0;
+		else accumulator <= adder2;
 	end 
 	
-	// Don't know what to use the rd, wr, empty and full for?
-	fifo Nbuffer (24, 17) (.clk(CLOCK_50), .reset, .rd(), .wr(), .empty(), .full(), .w_data(divided), .r_data(DataOut));
+
+	fifo #(24, 17) Nbuffer (.clk(CLOCK_50), .reset, .rd(full), .wr(1), .empty, .full, .w_data(divided), .r_data(DataOut));
 
 endmodule

@@ -21,6 +21,7 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	wire reset = ~KEY[0];
 	logic [16:0]  address;
 	logic [23:0]  q;
+	logic [23:0] DataOutTopL, DataOutTopR, DataOutTopQ;
 	
 	always_ff @(posedge CLOCK_50) begin
 		if (address == 95999) address <= 0;
@@ -30,10 +31,35 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	
 	ROM_1port ROM (.address(address), .clock(CLOCK_50), .q(q));
 	
-	part3 FIRfilter ();
+	part3 FIRfilterTask1L (.CLOCK_50, .reset, .DataInTop(readdata_left), .DataOutTop(DataOutTopL));
 	
-	assign writedata_left = SW[9] ? q : readdata_left;
-	assign writedata_right = SW[9] ? q : readdata_right;
+	part3 FIRfilterTask1R (.CLOCK_50, .reset, .DataInTop(readdata_right), .DataOutTop(DataOutTopR));
+	
+	part3 FIRfilterTask2 (.CLOCK_50, .reset, .DataInTop(q), .DataOutTop(DataOutTopQ));
+
+
+	// SW9 = 0 = piano noise, SW9 = 1 = ROM tone
+	// SW8 = 0 = unfiltered,  SW8 = 1 = filtered
+	always_comb begin
+		if(~SW[9] & ~SW[8]) begin
+			writedata_left  = readdata_left;
+			writedata_right = readdata_right;
+
+		end else if(SW[9] & ~SW[8]) begin
+			writedata_left  = q;
+			writedata_right = q;
+			
+		end else if(~SW[9] & SW[8]) begin
+			writedata_left  = DataOutTopL;
+			writedata_right = DataOutTopR;
+			
+		end if(SW[9] & SW[8]) begin
+			writedata_left  = DataOutTopQ;
+			writedata_right = DataOutTopQ;
+			
+		end
+	end
+	
 	assign read = read_ready && write_ready;
 	assign write = read_ready && write_ready;
 
