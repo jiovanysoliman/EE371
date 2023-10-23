@@ -30,6 +30,8 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	
 	ROM_1port ROM (.address(address), .clock(CLOCK_50), .q(q));
 	
+	part3 FIRfilter ();
+	
 	assign writedata_left = SW[9] ? q : readdata_left;
 	assign writedata_right = SW[9] ? q : readdata_right;
 	assign read = read_ready && write_ready;
