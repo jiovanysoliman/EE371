@@ -19,12 +19,12 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	wire [23:0] readdata_left, readdata_right;
 	wire [23:0] writedata_left, writedata_right;
 	wire reset = ~KEY[0];
-	logic [16:0]  address;
+	logic [15:0]  address;
 	logic [23:0]  q;
 	logic [23:0] DataOutTopL, DataOutTopR, DataOutTopQ;
 	
 	always_ff @(posedge CLOCK_50) begin
-		if (address == 95999) address <= 0;
+		if (address == 47999) address <= 0;
 		else if (read && write) address <= address + 1'b1;
 		else address <= address;
 	end
@@ -33,9 +33,9 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	
  	part3 FIRfilterTask1L (.CLOCK_50, .reset, .DataInTop(readdata_left), .DataOutTop(DataOutTopL));
 	
-// part3 FIRfilterTask1R (.CLOCK_50, .reset, .DataInTop(readdata_right), .DataOutTop(DataOutTopR));
+ 	part3 FIRfilterTask1R (.CLOCK_50, .reset, .DataInTop(readdata_right), .DataOutTop(DataOutTopR));
 
-//	part3 FIRfilterTask2 (.CLOCK_50, .reset, .DataInTop(q), .DataOutTop(DataOutTopQ));
+	part3 FIRfilterTask2 (.CLOCK_50, .reset, .DataInTop(q), .DataOutTop(DataOutTopQ));
 
 
 // 	// SW9 = 0 = piano noise, SW9 = 1 = ROM tone
@@ -56,17 +56,15 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 		
 		else if(~SW[9] & SW[8]) begin
  			writedata_left  = DataOutTopL;
-// 			writedata_right = DataOutTopR;
-			writedata_right = readdata_right;
+ 			writedata_right = DataOutTopR;
 
 			
 		end 
 		
 		else  begin
-// 			writedata_left  = DataOutTopQ;
-// 			writedata_right = DataOutTopQ;
-			writedata_left  = q;
-			writedata_right = q;
+ 			writedata_left  = DataOutTopQ;
+ 			writedata_right = DataOutTopQ;
+
 			
 		end
 	read = read_ready && write_ready;

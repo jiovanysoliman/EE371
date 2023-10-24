@@ -6,7 +6,6 @@ module part3 #(parameter N = 8) (CLOCK_50, reset, DataInTop, DataOutTop);
 	input logic CLOCK_50, reset;
 	logic [23:0] divided;
 	logic [23:0] multiplicator;
-	logic [23:0] adder1;
 	logic [23:0] adder2;
 	logic full;
 	logic [23:0] accumulator;
@@ -15,6 +14,7 @@ module part3 #(parameter N = 8) (CLOCK_50, reset, DataInTop, DataOutTop);
 	always_comb begin
 		divided = {{N{DataInTop[23]}}, DataInTop[23:N]};
 		multiplicator = DataOut * 24'sb1;
+//        multiplicator = DataOut * -1;
 		adder2 = multiplicator + divided + accumulator;
 		DataOutTop = adder2;
 	end
@@ -25,6 +25,6 @@ module part3 #(parameter N = 8) (CLOCK_50, reset, DataInTop, DataOutTop);
 	end 
 	
 
-	fifo #(24, 17) Nbuffer (.clk(CLOCK_50), .reset, .rd(full), .wr(1), .empty, .full, .w_data(divided), .r_data(DataOut));
+	fifo #(24, N) Nbuffer (.clk(CLOCK_50), .reset, .rd(full), .wr(1), .empty, .full, .w_data(divided), .r_data(DataOut));
 
 endmodule
