@@ -1,3 +1,5 @@
+// N = power of 2 to achieve 2^N samples
+// ex. we want 256 samples = 2^8, so N = 8
 module part3 #(parameter N = 8) (CLOCK_50, reset, DataInTop, DataOutTop); 
 
 	input logic [23:0] DataInTop;
@@ -11,31 +13,32 @@ module part3 #(parameter N = 8) (CLOCK_50, reset, DataInTop, DataOutTop);
 	logic [23:0] accumulator;
 	logic empty;
 	
+	// if we want 8 samples, we need fifo to have 8 addresses (2^3 = 8), otherwise fifo will have 2^8 = 256 addresses?
+	fifo #(24, 3) Nbuffer (.clk(CLOCK_50), .reset, .rd(full), .wr(1'b1), .empty, .full, .w_data(divided), .r_data(DataOut));
+	
+	// bitwise shift right = dividing value by 2^n where n = number of positions shifted
+	// ex. if N = 8, then we are essentially dividing by 2^8 = 256
+	assign divided = {{3{DataInTop[23]}}, DataInTop[23:3]};
+	assign multiplicator = DataOut * -1;
+	
+	// only subtract a data point when the buffer is full
 	always_comb begin
-		divided = {{N{DataInTop[23]}}, DataInTop[23:N]};
-//		multiplicator = DataOut * 24'sb1;
-        multiplicator = DataOut * -1;
-		adder2 = multiplicator + divided + accumulator;
-		DataOutTop = adder2;
+		case(full)
+			0: adder2 = divided;
+			1: adder2 = divided + multiplicator;
+			default: adder2 = divided;
+		endcase
 	end
 
 	always_ff @(posedge CLOCK_50) begin
-		if (reset) accumulator <= 0;
-		else accumulator <= adder2;
+		if (reset) begin
+			accumulator <= 0;
+		end else begin
+			accumulator <= accumulator + adder2;
+		end
 	end 
-
-//	always_ff @(posedge CLOCK_50) begin
-//		if(reset) begin
-//			adder2 <= 0;
-//			accumulator <= 0;
-//		end else begin
-//			adder2 <= multiplicator + divided;
-//			accumulator <= accumulator + adder2;
-//		end
-//	end
 	
-	// if we want 8 samples, we need fifo to have 8 addresses (2^3 = 8), otherwise fifo will have 2^8 = 256 addresses?
-	fifo #(24, 3) Nbuffer (.clk(CLOCK_50), .reset, .rd(full), .wr(1), .empty, .full, .w_data(divided), .r_data(DataOut));
+	assign DataOutTop = accumulator;
 
 endmodule
 
@@ -86,6 +89,7 @@ module part3_tb();
 						DataInTop <= 24'h834c05; @(posedge CLOCK_50);
 						DataInTop <= 24'h19a12c; @(posedge CLOCK_50);
 						DataInTop <= 24'he3beba; @(posedge CLOCK_50);
+														 repeat(20) @(posedge CLOCK_50);
 													    $stop;
 
 	end
