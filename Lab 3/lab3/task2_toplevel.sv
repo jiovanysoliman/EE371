@@ -23,14 +23,17 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 	logic [23:0]  q;
 	logic [23:0] DataOutTopL, DataOutTopR, DataOutTopQ;
 	
+	// cycle through each sample of our generated tone
 	always_ff @(posedge CLOCK_50) begin
 		if (address == 47999) address <= 0;
 		else if (read && write) address <= address + 1'b1;
 		else address <= address;
 	end
 	
+	// initialize ROM memory with generated tone samples
 	ROM_1port ROM (.address(address), .clock(CLOCK_50), .q(q));
 	
+	// initialize 3 filters to apply to generated tone and piano_noisy left and right audio channels
  	part3 FIRfilterTask1L (.CLOCK_50, .reset, .DataInTop(readdata_left), .DataOutTop(DataOutTopL));
 	
  	part3 FIRfilterTask1R (.CLOCK_50, .reset, .DataInTop(readdata_right), .DataOutTop(DataOutTopR));
@@ -40,7 +43,7 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 
 // 	// SW9 = 0 = piano noise, SW9 = 1 = ROM tone
 // 	// SW8 = 0 = unfiltered,  SW8 = 1 = filtered
-	always_comb begin
+	always_comb begin // unfiltered piano_noisy
 		if(~SW[9] & ~SW[8]) begin
 			writedata_left  = readdata_left;
 			writedata_right = readdata_right;
@@ -48,20 +51,20 @@ module task2_toplevel (CLOCK_50, CLOCK2_50, KEY, SW, FPGA_I2C_SCLK, FPGA_I2C_SDA
 
 		end
 		
-		 else if(SW[9] & ~SW[8]) begin
+		 else if(SW[9] & ~SW[8]) begin //unfiltered ROM tone
 			writedata_left  = q;
 			writedata_right = q;
 			
 		end
 		
-		else if(~SW[9] & SW[8]) begin
+		else if(~SW[9] & SW[8]) begin // filtered piano_noisy
  			writedata_left  = DataOutTopL;
  			writedata_right = DataOutTopR;
 
 			
 		end 
 		
-		else  begin
+		else  begin // SW[9] & SW[8] = filtered ROM tone
  			writedata_left  = DataOutTopQ;
  			writedata_right = DataOutTopQ;
 

@@ -24,15 +24,17 @@ module part2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	// Your code goes here 
 	/////////////////////////////////
 	
-	
+	// cycle through each sample of our generated tone
 	always_ff @(posedge CLOCK_50) begin
-		if (address == 95999) address <= 0;
+		if (address == 47999) address <= 0;
 		else if (read && write) address <= address + 1'b1;
 		else address <= address;
 	end
 	
+	// initialize ROM memory with generated tone samples
 	ROM_1port ROM (.address(address), .clock(CLOCK_50), .q(q));
 	
+	// pass audio input only when CODEC is ready for reading and writing
 	assign writedata_left = q;
 	assign writedata_right = q;
 	assign read = read_ready && write_ready;
@@ -93,5 +95,3 @@ module part2 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	);
 
 endmodule
-
-
