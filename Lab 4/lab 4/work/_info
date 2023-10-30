@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/My labs/My Lab 4 files/lab 4
+vcounter_cntrl
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1698636010
+!i10b 1
+!s100 :KaS5OfQUUmfa7AK^BGEH2
+IHg>GkD5;0<H=RWA8754?d2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 counter_cntrl_sv_unit
+S1
+R0
+Z5 w1698635996
+Z6 8./counter_cntrl.sv
+Z7 F./counter_cntrl.sv
+L0 7
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1698636010.000000
+Z10 !s107 ./counter_cntrl.sv|
+Z11 !s90 -reportprogress|300|./counter_cntrl.sv|
+!i113 1
+Z12 tCvgOpt 0
+vcounter_cntrl_tb
+R1
+R2
+!i10b 1
+!s100 =hHT@4;N<=KgX:chzaaIc0
+IiLe[9j_B_kEGa@Vni<]T;0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 40
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vcounter_datapath
+R1
+Z13 !s110 1698639342
+!i10b 1
+!s100 =lCmoNzZEaBo^:KR@b<a]2
+IG4=lG3HMAKY<WX=k16QRJ1
+R3
+Z14 !s105 counter_datapath_sv_unit
+S1
+R0
+Z15 w1698639327
+Z16 8./counter_datapath.sv
+Z17 F./counter_datapath.sv
+L0 8
+R8
+r1
+!s85 0
+31
+Z18 !s108 1698639342.000000
+Z19 !s107 ./counter_datapath.sv|
+Z20 !s90 -reportprogress|300|./counter_datapath.sv|
+!i113 1
+R12
+vcounter_datapath_tb
+R1
+R13
+!i10b 1
+!s100 B]@5Y4FkM3NiSIIW_;RkE3
+I8kTHHRD3[;o8KEjQZcXP?2
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+L0 39
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12

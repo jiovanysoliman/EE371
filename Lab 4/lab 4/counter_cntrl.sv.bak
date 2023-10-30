@@ -1,0 +1,33 @@
+module counter_cntrl(clk, reset, s, A, A_zero, load_A, r_shift_A, incr_result, clr_result, done);
+	
+	// port definitions
+	input  logic clk, reset, s, A_zero;
+	input  logic [7:0] A;
+	output logic load_A, r_shift_A, incr_result, clr_result, done;
+	
+	// define state names and variables
+	enum {S1, S2, S3} ps, ns;
+	
+	// controller logic with synchronous reset
+	always_ff @(posedge clk)
+		if(reset)
+			ps <= S1;
+		else
+			ps <= ns;
+			
+	// next state logic
+	always_comb
+		case(ps)
+			S1:	ns = s ? S2 : S1;
+			S2:	ns = A_zero ? S3 : S2;
+			S3:	ns = s ? S3 : s1;
+	endcase
+	
+	// output assignments
+	assign load_A      = (ps == S1) & ~s;
+	assign r_shift_A   = (ps == S2);
+	assign incr_result = (ps == S2) & (A[0] == 1);
+	assign clr_result  = (ps == S1);
+	assign done			 = (ps == S3);
+	
+endmodule // counter_cntrl
