@@ -1,5 +1,5 @@
-Analysis & Elaboration report for part1
-Mon Oct 23 16:46:28 2023
+Analysis & Synthesis report for part1
+Fri Oct 27 19:10:21 2023
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -7,15 +7,27 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |part3
-  5. Parameter Settings for User Entity Instance: fifo:Nbuffer
-  6. Parameter Settings for User Entity Instance: fifo:Nbuffer|fifo_ctrl:c_unit
-  7. Parameter Settings for User Entity Instance: fifo:Nbuffer|reg_file:r_unit
-  8. Analysis & Elaboration Settings
-  9. Port Connectivity Checks: "fifo:Nbuffer"
- 10. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Registers Added for RAM Pass-Through Logic
+ 12. Source assignments for fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0|altsyncram_agi1:auto_generated
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |part3
+ 14. Parameter Settings for User Entity Instance: fifo:Nbuffer
+ 15. Parameter Settings for User Entity Instance: fifo:Nbuffer|fifo_ctrl:c_unit
+ 16. Parameter Settings for User Entity Instance: fifo:Nbuffer|reg_file:r_unit
+ 17. Parameter Settings for Inferred Entity Instance: fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "fifo:Nbuffer"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -39,84 +51,31 @@ agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Mon Oct 23 16:46:28 2023       ;
-; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name                 ; part1                                       ;
-; Top-level Entity Name         ; part3                                       ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |part3 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; N              ; 8     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fifo:Nbuffer ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; DATA_WIDTH     ; 24    ; Signed Integer                   ;
-; ADDR_WIDTH     ; 17    ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fifo:Nbuffer|fifo_ctrl:c_unit ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; ADDR_WIDTH     ; 17    ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fifo:Nbuffer|reg_file:r_unit ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; DATA_WIDTH     ; 24    ; Signed Integer                                   ;
-; ADDR_WIDTH     ; 17    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 27 19:10:21 2023       ;
+; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                   ; part1                                       ;
+; Top-level Entity Name           ; part3                                       ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 62                                          ;
+; Total pins                      ; 50                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 192                                         ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -202,6 +161,294 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; reg_file.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/reg_file.sv            ;         ;
+; part3.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv               ;         ;
+; fifo_ctrl.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/fifo_ctrl.sv           ;         ;
+; fifo.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/fifo.sv                ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf                                                                         ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                  ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc                                                                            ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc                                                                         ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                                                                         ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                                          ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc                                                                             ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc                                                                             ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc                                                                           ;         ;
+; db/altsyncram_agi1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/db/altsyncram_agi1.tdf ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 36             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 59             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 0              ;
+;     -- 5 input functions                    ; 2              ;
+;     -- 4 input functions                    ; 51             ;
+;     -- <=3 input functions                  ; 6              ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 62             ;
+;                                             ;                ;
+; I/O pins                                    ; 50             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 192            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 86             ;
+; Total fan-out                               ; 691            ;
+; Average fan-out                             ; 2.82           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                    ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------+--------------+
+; |part3                                       ; 59 (49)             ; 62 (24)                   ; 192               ; 0          ; 50   ; 0            ; |part3                                                                                        ; part3           ; work         ;
+;    |fifo:Nbuffer|                            ; 10 (0)              ; 38 (0)                    ; 192               ; 0          ; 0    ; 0            ; |part3|fifo:Nbuffer                                                                           ; fifo            ; work         ;
+;       |fifo_ctrl:c_unit|                     ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |part3|fifo:Nbuffer|fifo_ctrl:c_unit                                                          ; fifo_ctrl       ; work         ;
+;       |reg_file:r_unit|                      ; 2 (2)               ; 31 (31)                   ; 192               ; 0          ; 0    ; 0            ; |part3|fifo:Nbuffer|reg_file:r_unit                                                           ; reg_file        ; work         ;
+;          |altsyncram:array_reg_rtl_0|        ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |part3|fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0                                ; altsyncram      ; work         ;
+;             |altsyncram_agi1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |part3|fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0|altsyncram_agi1:auto_generated ; altsyncram_agi1 ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++---------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0|altsyncram_agi1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8            ; 24           ; 8            ; 24           ; 192  ; None ;
++---------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; fifo:Nbuffer|fifo_ctrl:c_unit|empty   ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 62    ;
+; Number of registers using Synchronous Clear  ; 28    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                             ;
++---------------------------------------------------------+----------------------------------------------+
+; Register Name                                           ; RAM Name                                     ;
++---------------------------------------------------------+----------------------------------------------+
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[0]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[1]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[2]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[3]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[4]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[5]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[6]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[7]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[8]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[9]  ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[10] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[11] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[12] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[13] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[14] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[15] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[16] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[17] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[18] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[19] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[20] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[21] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[22] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[23] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[24] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[25] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[26] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[27] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[28] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[29] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
+; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0_bypass[30] ; fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0 ;
++---------------------------------------------------------+----------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0|altsyncram_agi1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                              ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |part3 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; N              ; 3     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:Nbuffer ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; DATA_WIDTH     ; 24    ; Signed Integer                   ;
+; ADDR_WIDTH     ; 3     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:Nbuffer|fifo_ctrl:c_unit ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; ADDR_WIDTH     ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo:Nbuffer|reg_file:r_unit ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; DATA_WIDTH     ; 24    ; Signed Integer                                   ;
+; ADDR_WIDTH     ; 3     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0 ;
++------------------------------------+----------------------+----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                         ;
++------------------------------------+----------------------+----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                      ;
+; WIDTH_A                            ; 24                   ; Untyped                                      ;
+; WIDTHAD_A                          ; 3                    ; Untyped                                      ;
+; NUMWORDS_A                         ; 8                    ; Untyped                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WIDTH_B                            ; 24                   ; Untyped                                      ;
+; WIDTHAD_B                          ; 3                    ; Untyped                                      ;
+; NUMWORDS_B                         ; 8                    ; Untyped                                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                      ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                      ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_agi1      ; Untyped                                      ;
++------------------------------------+----------------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                    ;
++-------------------------------------------+---------------------------------------------------------+
+; Name                                      ; Value                                                   ;
++-------------------------------------------+---------------------------------------------------------+
+; Number of entity instances                ; 1                                                       ;
+; Entity Instance                           ; fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                               ;
+;     -- WIDTH_A                            ; 24                                                      ;
+;     -- NUMWORDS_A                         ; 8                                                       ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                            ;
+;     -- WIDTH_B                            ; 24                                                      ;
+;     -- NUMWORDS_B                         ; 8                                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                               ;
++-------------------------------------------+---------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "fifo:Nbuffer"                                                                        ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -212,20 +459,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 62                          ;
+;     SCLR              ; 27                          ;
+;     SCLR SLD          ; 1                           ;
+;     plain             ; 34                          ;
+; arriav_lcell_comb     ; 59                          ;
+;     arith             ; 49                          ;
+;         0 data inputs ; 1                           ;
+;         4 data inputs ; 48                          ;
+;     normal            ; 10                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 2                           ;
+; boundary_port         ; 50                          ;
+; stratixv_ram_block    ; 24                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.30                        ;
+; Average LUT depth     ; 4.30                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Oct 23 16:46:20 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part1 -c part1 --analysis_and_elaboration
+    Info: Processing started: Fri Oct 27 19:10:12 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part1 -c part1
+Warning (125092): Tcl Script File ROM_1port.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ROM_1port.qip
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file part2_tb.sv
+    Info (12023): Found entity 1: mockPart2 File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part2_tb.sv Line: 14
+    Info (12023): Found entity 2: part2_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part2_tb.sv Line: 54
+Info (12021): Found 1 design units, including 1 entities, in source file rom_1port_bb.v
+    Info (12023): Found entity 1: ROM_1port File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/ROM_1port_bb.v Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file reg_file.sv
     Info (12023): Found entity 1: reg_file File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/reg_file.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file part3.sv
-    Info (12023): Found entity 1: part3 File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file part3.sv
+    Info (12023): Found entity 1: part3 File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 13
+    Info (12023): Found entity 2: part3_tb File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 58
 Info (12021): Found 1 design units, including 1 entities, in source file part2.sv
     Info (12023): Found entity 1: part2 File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part2.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fifo_tb.sv
@@ -262,18 +553,65 @@ Info (12021): Found 1 design units, including 1 entities, in source file altera_
     Info (12023): Found entity 1: Altera_UP_Audio_Bit_Counter File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/Altera_UP_Audio_Bit_Counter.v Line: 49
 Info (12021): Found 1 design units, including 1 entities, in source file part1.v
     Info (12023): Found entity 1: part1 File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part1.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file rom_1port.v
-    Info (12023): Found entity 1: ROM_1port File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/ROM_1port.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file task2_toplevel.sv
     Info (12023): Found entity 1: task2_toplevel File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/task2_toplevel.sv Line: 1
 Info (12127): Elaborating entity "part3" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at part3.sv(33): truncated value with size 32 to match size of target (24) File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 33
 Info (12128): Elaborating entity "fifo" for hierarchy "fifo:Nbuffer" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 28
 Info (12128): Elaborating entity "fifo_ctrl" for hierarchy "fifo:Nbuffer|fifo_ctrl:c_unit" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/fifo.sv Line: 25
 Info (12128): Elaborating entity "reg_file" for hierarchy "fifo:Nbuffer|reg_file:r_unit" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/fifo.sv Line: 26
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4773 megabytes
-    Info: Processing ended: Mon Oct 23 16:46:28 2023
-    Info: Elapsed time: 00:00:08
+Warning (276020): Inferred RAM node "fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "fifo:Nbuffer|reg_file:r_unit|array_reg_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 24
+        Info (286033): Parameter WIDTHAD_A set to 3
+        Info (286033): Parameter NUMWORDS_A set to 8
+        Info (286033): Parameter WIDTH_B set to 24
+        Info (286033): Parameter WIDTHAD_B set to 3
+        Info (286033): Parameter NUMWORDS_B set to 8
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0"
+Info (12133): Instantiated megafunction "fifo:Nbuffer|reg_file:r_unit|altsyncram:array_reg_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "24"
+    Info (12134): Parameter "WIDTHAD_A" = "3"
+    Info (12134): Parameter "NUMWORDS_A" = "8"
+    Info (12134): Parameter "WIDTH_B" = "24"
+    Info (12134): Parameter "WIDTHAD_B" = "3"
+    Info (12134): Parameter "NUMWORDS_B" = "8"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_agi1.tdf
+    Info (12023): Found entity 1: altsyncram_agi1 File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/db/altsyncram_agi1.tdf Line: 28
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "DataInTop[0]" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 15
+    Warning (15610): No output dependent on input pin "DataInTop[1]" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 15
+    Warning (15610): No output dependent on input pin "DataInTop[2]" File: C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 3/lab3/part3.sv Line: 15
+Info (21057): Implemented 168 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 26 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 94 logic cells
+    Info (21064): Implemented 24 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Fri Oct 27 19:10:21 2023
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:05
 
 
