@@ -1,1 +1,4 @@
 *.docx
+*.qws
+*.db_info
+*.flock
