@@ -10,6 +10,7 @@ output logic Found;
 logic [LocWidth-1:0] address, addresstemp, temp1;
 logic [InputWidth-1:0] q;
 
+enum  {idle, waiting, complete} ps, ns;
 
 always_ff @(posedge CLOCK_50) begin
 	temp1 <= addresstemp;
@@ -18,25 +19,59 @@ end
 
 
 always_comb begin
-
-	if (A == q) begin
-		Loc = address;
-		Done = 1;
-		Found = 1;
-	end
+	case (ps)
 	
-//	elseif (Start && ~Done) begin 
-//		addresstemp = 5'b01111;
-//		if (A > q) addresstemp = 5'b10111;
-//		elseif (A < q) addresstemp = 5'b1000;
-//	end
-	
-	else begin
-		Done = 1;
-		Found = 0;
-	end
-	
+		idle: begin
+		
+//			if (Start) ns = loop; // correct line
+			if (Start) ns = idle;  // Just for testing
+			else ns = idle;
+			Done = 0;
+			Found = 0;
+		end
+		
+//		loop: begin
+//		
+//			
+//		
+//		end
+		
+		waiting: begin
+		
+			if (A == q) begin 
+				ns = complete;
+				Found = 1;
+			end
+//			else ns = loop; // correct line
+			else ns = idle; // just for testing
+			Done = 0;
+			Found = 0;
+		
+		end
+		
+		complete: begin
+		
+			ns = complete;
+			if (A == q) Found = 1;
+			else Found = 0;
+			Done = 1;
+		
+		end
+		
+		default: begin
+			ns = idle;
+			Found = 0;
+			Done = 0;
+		end
+	endcase
 end 
+
+always_ff @(posedge CLOCK_50) begin
+
+	if (Reset) ps <= idle;
+	else ps <= ns;
+
+end
 
 
 
