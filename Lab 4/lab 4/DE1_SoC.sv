@@ -27,7 +27,7 @@ module DE1_SoC(CLOCK_50, SW, KEY, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0);
 	//end
 
 
-//	always_ff (posedge clk); begin
+//	always_ff (posedge clk) begin
 //
 //		temp1 <= KEY[3];
 //		Start <= temp1;
