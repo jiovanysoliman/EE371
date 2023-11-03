@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/My labs/My Lab 4 files/lab 4
 vbinary
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1699017558
+Z2 !s110 1699017693
 !i10b 1
 !s100 ;V?a<9Az3oee;E?Tc`J@[0
 Ic[=m8YlDo_:QMQNR_WUDc2
@@ -26,7 +26,7 @@ Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z10 !s108 1699017558.000000
+Z10 !s108 1699017693.000000
 Z11 !s107 ./binary.sv|
 Z12 !s90 -reportprogress|300|./binary.sv|
 !i113 1
@@ -196,7 +196,7 @@ R30
 R13
 vDE1_SoC
 R1
-Z31 !s110 1699017559
+R2
 !i10b 1
 !s100 :KI=Q4@3hXjD9deHTU:cf3
 IA<aiXKPd^lkU3Lb[aeaQ62
@@ -219,7 +219,7 @@ R10
 R13
 n@d@e1_@so@c
 vRAM_32_8_1port
-R31
+R2
 !i10b 1
 !s100 mS0]TSkO9`cA<Bg<9C2420
 I9D=ID`dTiolimfzQL9ji?1
@@ -233,7 +233,7 @@ R9
 r1
 !s85 0
 31
-!s108 1699017559.000000
+R10
 !s107 ./RAM_32_8_1port.v|
 !s90 -reportprogress|300|./RAM_32_8_1port.v|
 !i113 1
