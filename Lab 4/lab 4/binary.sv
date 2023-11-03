@@ -30,7 +30,7 @@ module binary_tb ();
     binary dut (.*);
 	 
     initial begin
-        A = 8'd32;
+        A = 8'd4;
         Reset = 1; @(posedge CLOCK_50);
         Reset = 0; @(posedge CLOCK_50);
         Start = 1; @(posedge CLOCK_50);
