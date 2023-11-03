@@ -1,3 +1,4 @@
+`timescale 1 ps / 1 ps
 module binary (CLOCK_50, A, Start, Reset, Done, Found);
 
 	input logic CLOCK_50,Start, Reset;
@@ -15,30 +16,30 @@ endmodule
 // *****************************************************
 // NOT OUR CODE, JUST FOR TESTING PURPOSE. DO NOT SUBMIT.
 // *****************************************************
+`timescale 1 ps / 1 ps
 module binary_tb (); 
-    logic clk, start, reset;
-    logic [7:0] search; 
-    logic [4:0] address;
-    logic done, found;
+    logic CLOCK_50, Start, Reset,Done, Found;
+    logic [7:0] A; 
 
     parameter T = 10;
     initial begin 
-        clk <= 1'b0;
-        forever #(T / 2) clk <= ~clk;
+        CLOCK_50 <= 1'b0;
+        forever #(T / 2) CLOCK_50 <= ~CLOCK_50;
     end
 
     binary dut (.*);
+	 
     initial begin
-        search = 8'd32;
-        reset = 1; @(posedge clk);
-        reset = 0; @(posedge clk);
-        start = 1; @(posedge clk);
-        start = 0; @(posedge clk);
+        A = 8'd32;
+        Reset = 1; @(posedge CLOCK_50);
+        Reset = 0; @(posedge CLOCK_50);
+        Start = 1; @(posedge CLOCK_50);
+        Start = 0; @(posedge CLOCK_50);
         #350
-        reset = 1; @(posedge clk);
-        reset = 0; @(posedge clk);
-        search = 8'd153;
-        start = 1; @(posedge clk);
+        Reset = 1; @(posedge CLOCK_50);
+        Reset = 0; @(posedge CLOCK_50);
+        A = 8'd153;
+        Start = 1; @(posedge CLOCK_50);
         #350
         $stop;
     end

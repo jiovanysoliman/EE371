@@ -1,3 +1,4 @@
+`timescale 1 ps / 1 ps
 module binaryDataPath (CLOCK_50, compute_M, Set_LSB, Set_MSB, LSB, MSB, M, q, Start, Reset, init, Loc);
 
 input logic CLOCK_50;

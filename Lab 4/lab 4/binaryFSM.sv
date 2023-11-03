@@ -1,3 +1,4 @@
+`timescale 1 ps / 1 ps
 module binaryFSM (CLOCK_50, A, q, Start, compute_M, Set_LSB, Set_MSB, init, LSB, MSB, M, Reset, Done, Found);
 
 input logic CLOCK_50,Start, Reset;

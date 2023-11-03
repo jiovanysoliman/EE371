@@ -8,95 +8,234 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/My labs/My Lab 4 files/lab 4
-vcounter_cntrl
+vbinary
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1698636010
+Z2 !s110 1699017558
 !i10b 1
-!s100 :KaS5OfQUUmfa7AK^BGEH2
-IHg>GkD5;0<H=RWA8754?d2
+!s100 ;V?a<9Az3oee;E?Tc`J@[0
+Ic[=m8YlDo_:QMQNR_WUDc2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 !s105 counter_cntrl_sv_unit
+Z4 !s105 binary_sv_unit
 S1
-R0
-Z5 w1698635996
-Z6 8./counter_cntrl.sv
-Z7 F./counter_cntrl.sv
-L0 7
-Z8 OV;L;10.5b;63
+Z5 dC:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4
+Z6 w1699017469
+Z7 8./binary.sv
+Z8 F./binary.sv
+L0 2
+Z9 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1698636010.000000
-Z10 !s107 ./counter_cntrl.sv|
-Z11 !s90 -reportprogress|300|./counter_cntrl.sv|
+Z10 !s108 1699017558.000000
+Z11 !s107 ./binary.sv|
+Z12 !s90 -reportprogress|300|./binary.sv|
 !i113 1
-Z12 tCvgOpt 0
-vcounter_cntrl_tb
+Z13 tCvgOpt 0
+vbinary_tb
 R1
 R2
+!i10b 1
+!s100 PDI?7zn86JzZIRWbjI9i53
+Io`7k[2e72BS9:mC^b>_8W0
+R3
+R4
+S1
+R5
+R6
+R7
+R8
+L0 20
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 1
+R13
+vbinaryDataPath
+R1
+R2
+!i10b 1
+!s100 `CAfGn85iHfW<o6kE7mHd0
+IScLV8g2V>3Lg@[W5hE?z40
+R3
+!s105 binaryDataPath_sv_unit
+S1
+R5
+w1699017460
+8./binaryDataPath.sv
+F./binaryDataPath.sv
+L0 2
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./binaryDataPath.sv|
+!s90 -reportprogress|300|./binaryDataPath.sv|
+!i113 1
+R13
+nbinary@data@path
+vbinaryFSM
+R1
+R2
+!i10b 1
+!s100 6cNUh5R`L<Zc55Mfa]<eP3
+I[QCE`m59^RI9b0lHQ4gHW2
+R3
+!s105 binaryFSM_sv_unit
+S1
+R5
+w1699017461
+8./binaryFSM.sv
+F./binaryFSM.sv
+L0 2
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./binaryFSM.sv|
+!s90 -reportprogress|300|./binaryFSM.sv|
+!i113 1
+R13
+nbinary@f@s@m
+vcounter_cntrl
+R1
+Z14 !s110 1698636010
+!i10b 1
+!s100 :KaS5OfQUUmfa7AK^BGEH2
+IHg>GkD5;0<H=RWA8754?d2
+R3
+Z15 !s105 counter_cntrl_sv_unit
+S1
+R0
+Z16 w1698635996
+Z17 8./counter_cntrl.sv
+Z18 F./counter_cntrl.sv
+L0 7
+R9
+r1
+!s85 0
+31
+Z19 !s108 1698636010.000000
+Z20 !s107 ./counter_cntrl.sv|
+Z21 !s90 -reportprogress|300|./counter_cntrl.sv|
+!i113 1
+R13
+vcounter_cntrl_tb
+R1
+R14
 !i10b 1
 !s100 =hHT@4;N<=KgX:chzaaIc0
 IiLe[9j_B_kEGa@Vni<]T;0
 R3
-R4
+R15
 S1
 R0
-R5
-R6
-R7
-L0 40
-R8
+R16
+R17
+R18
+Z22 L0 40
+R9
 r1
 !s85 0
 31
-R9
-R10
-R11
+R19
+R20
+R21
 !i113 1
-R12
+R13
 vcounter_datapath
 R1
-Z13 !s110 1698639342
+Z23 !s110 1698639342
 !i10b 1
 !s100 =lCmoNzZEaBo^:KR@b<a]2
 IG4=lG3HMAKY<WX=k16QRJ1
 R3
-Z14 !s105 counter_datapath_sv_unit
+Z24 !s105 counter_datapath_sv_unit
 S1
 R0
-Z15 w1698639327
-Z16 8./counter_datapath.sv
-Z17 F./counter_datapath.sv
+Z25 w1698639327
+Z26 8./counter_datapath.sv
+Z27 F./counter_datapath.sv
 L0 8
-R8
+R9
 r1
 !s85 0
 31
-Z18 !s108 1698639342.000000
-Z19 !s107 ./counter_datapath.sv|
-Z20 !s90 -reportprogress|300|./counter_datapath.sv|
+Z28 !s108 1698639342.000000
+Z29 !s107 ./counter_datapath.sv|
+Z30 !s90 -reportprogress|300|./counter_datapath.sv|
 !i113 1
-R12
+R13
 vcounter_datapath_tb
 R1
-R13
+R23
 !i10b 1
 !s100 B]@5Y4FkM3NiSIIW_;RkE3
 I8kTHHRD3[;o8KEjQZcXP?2
 R3
-R14
+R24
 S1
 R0
-R15
-R16
-R17
+R25
+R26
+R27
 L0 39
-R8
+R9
 r1
 !s85 0
 31
-R18
-R19
-R20
+R28
+R29
+R30
 !i113 1
-R12
+R13
+vDE1_SoC
+R1
+Z31 !s110 1699017559
+!i10b 1
+!s100 :KI=Q4@3hXjD9deHTU:cf3
+IA<aiXKPd^lkU3Lb[aeaQ62
+R3
+!s105 DE1_SoC_sv_unit
+S1
+R5
+w1698958749
+8./DE1_SoC.sv
+F./DE1_SoC.sv
+L0 5
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./DE1_SoC.sv|
+!s90 -reportprogress|300|./DE1_SoC.sv|
+!i113 1
+R13
+n@d@e1_@so@c
+vRAM_32_8_1port
+R31
+!i10b 1
+!s100 mS0]TSkO9`cA<Bg<9C2420
+I9D=ID`dTiolimfzQL9ji?1
+R3
+R5
+w1698957688
+8./RAM_32_8_1port.v
+F./RAM_32_8_1port.v
+R22
+R9
+r1
+!s85 0
+31
+!s108 1699017559.000000
+!s107 ./RAM_32_8_1port.v|
+!s90 -reportprogress|300|./RAM_32_8_1port.v|
+!i113 1
+R13
+n@r@a@m_32_8_1port
