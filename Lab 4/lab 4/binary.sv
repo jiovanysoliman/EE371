@@ -1,81 +1,45 @@
-module binary #(parameter InputWidth = 8, parameter LocWidth = 5) (CLOCK_50, A, Start, Reset, Loc, Done, Found);
+module binary (CLOCK_50, A, Start, Reset, Done, Found);
 
-input logic CLOCK_50;
-input logic [InputWidth-1:0] A;
-input logic Start;
-input logic Reset;
-output logic [LocWidth-1:0] Loc;
-output logic Done;
-output logic Found;
-logic [LocWidth-1:0] address, addresstemp, temp1;
-logic [InputWidth-1:0] q;
+	input logic CLOCK_50,Start, Reset;
+	input logic [7:0] A;
+	output logic Done, Found; // status signals
+	logic compute_M, Set_LSB, Set_MSB, init; // control signals
+	logic [4:0] Loc, LSB, MSB, M;
+	logic [7:0] q;
 
-enum  {idle, waiting, complete} ps, ns;
+	binaryFSM FSM (.*);
+	binaryDataPath Data (.*);
 
-always_ff @(posedge CLOCK_50) begin
-	temp1 <= addresstemp;
-	address <= temp1;
-end
+endmodule
 
+// *****************************************************
+// NOT OUR CODE, JUST FOR TESTING PURPOSE. DO NOT SUBMIT.
+// *****************************************************
+module binary_tb (); 
+    logic clk, start, reset;
+    logic [7:0] search; 
+    logic [4:0] address;
+    logic done, found;
 
-always_comb begin
-	case (ps)
-	
-		idle: begin
-		
-//			if (Start) ns = loop; // correct line
-			if (Start) ns = idle;  // Just for testing
-			else ns = idle;
-			Done = 0;
-			Found = 0;
-		end
-		
-//		loop: begin
-//		
-//			
-//		
-//		end
-		
-		waiting: begin
-		
-			if (A == q) begin 
-				ns = complete;
-				Found = 1;
-			end
-//			else ns = loop; // correct line
-			else ns = idle; // just for testing
-			Done = 0;
-			Found = 0;
-		
-		end
-		
-		complete: begin
-		
-			ns = complete;
-			if (A == q) Found = 1;
-			else Found = 0;
-			Done = 1;
-		
-		end
-		
-		default: begin
-			ns = idle;
-			Found = 0;
-			Done = 0;
-		end
-	endcase
-end 
+    parameter T = 10;
+    initial begin 
+        clk <= 1'b0;
+        forever #(T / 2) clk <= ~clk;
+    end
 
-always_ff @(posedge CLOCK_50) begin
-
-	if (Reset) ps <= idle;
-	else ps <= ns;
-
-end
-
-
-
-RAM_32_8_1port RAM (.address(address), .clock(CLOCK_50), .data(0), .wren(0), .q(q));
-
-
+    binary dut (.*);
+    initial begin
+        search = 8'd32;
+        reset = 1; @(posedge clk);
+        reset = 0; @(posedge clk);
+        start = 1; @(posedge clk);
+        start = 0; @(posedge clk);
+        #350
+        reset = 1; @(posedge clk);
+        reset = 0; @(posedge clk);
+        search = 8'd153;
+        start = 1; @(posedge clk);
+        #350
+        $stop;
+    end
 endmodule
