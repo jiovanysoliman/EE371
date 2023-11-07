@@ -1,4 +1,5 @@
 /*
+	Module to implmement the control path of task 1.
 	External inputs (inputs): clk, reset, s
 	Status signals (inputs): A_zero (true if A = 0, false otherwise), got_1 (true if A[0] = 1, false otherwise)
 	Control signals (outputs): load_A, r_shift_A, incr_result, clr_result, done

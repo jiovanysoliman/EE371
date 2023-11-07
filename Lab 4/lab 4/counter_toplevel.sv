@@ -36,8 +36,7 @@ module counter_toplevel(CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, SW, LEDR, 
 	
 endmodule 
 
-// FIX THIS -- DOES NOT SHOW HEX UPDATING PROPERLY but still works in labsland???
-module toplevel_tb();
+module counter_toplevel_tb();
 	logic CLOCK_50;	// 50MHz clock
 	logic [9:0] SW;
 	logic [3:0] KEY;
@@ -57,9 +56,11 @@ module toplevel_tb();
 		KEY[0] <= 0; @(posedge CLOCK_50);
 		KEY[0] <= 1; @(posedge CLOCK_50);
 		
-		for(i = 0; i < 2**8; i++) begin
-			SW[7:0] = i; @(posedge CLOCK_50);
-		end
+		SW[0] <= 1; @(posedge CLOCK_50); 
+		SW[1] <= 1; @(posedge CLOCK_50); 
+		
+		
+		
 	end
 endmodule 
 

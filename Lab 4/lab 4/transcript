@@ -2,53 +2,248 @@
 do runlab.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:19:05 on Nov 03,2023
+# Start time: 21:18:19 on Nov 06,2023
 # vlog -reportprogress 300 ./binary.sv 
 # -- Compiling module binary
 # -- Compiling module binary_tb
 # 
 # Top level modules:
 # 	binary_tb
-# End time: 07:19:05 on Nov 03,2023, Elapsed time: 0:00:00
+# End time: 21:18:19 on Nov 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:19:05 on Nov 03,2023
+# Start time: 21:18:19 on Nov 06,2023
 # vlog -reportprogress 300 ./binaryFSM.sv 
 # -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
 # 
 # Top level modules:
-# 	binaryFSM
-# End time: 07:19:05 on Nov 03,2023, Elapsed time: 0:00:00
+# 	binaryFSM_tb
+# End time: 21:18:19 on Nov 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:19:05 on Nov 03,2023
+# Start time: 21:18:19 on Nov 06,2023
 # vlog -reportprogress 300 ./binaryDataPath.sv 
 # -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
 # 
 # Top level modules:
-# 	binaryDataPath
-# End time: 07:19:05 on Nov 03,2023, Elapsed time: 0:00:00
+# 	binaryDataPath_tb
+# End time: 21:18:19 on Nov 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:19:05 on Nov 03,2023
+# Start time: 21:18:19 on Nov 06,2023
 # vlog -reportprogress 300 ./DE1_SoC.sv 
 # -- Compiling module DE1_SoC
 # 
 # Top level modules:
 # 	DE1_SoC
-# End time: 07:19:05 on Nov 03,2023, Elapsed time: 0:00:00
+# End time: 21:18:19 on Nov 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:19:05 on Nov 03,2023
+# Start time: 21:18:19 on Nov 06,2023
 # vlog -reportprogress 300 ./RAM_32_8_1port.v 
 # -- Compiling module RAM_32_8_1port
 # 
 # Top level modules:
 # 	RAM_32_8_1port
-# End time: 07:19:05 on Nov 03,2023, Elapsed time: 0:00:00
+# End time: 21:18:19 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb -Lf altera_mf_ver 
+# Start time: 21:18:19 on Nov 06,2023
+# ** Error: (vsim-3170) Could not find 'DE1_SoC_tb'.
+#         Searched libraries:
+#             C:/intelFPGA_lite/17.0/modelsim_ase/altera/verilog/altera_mf
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 19
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:18:46 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:18:46 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:18:46 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:18:46 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:18:46 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:18:46 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:18:46 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:18:46 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:18:46 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:18:46 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work DE1_SoC_tb 
+# Start time: 21:18:19 on Nov 06,2023
+# ** Error: (vsim-3170) Could not find 'DE1_SoC_tb'.
+#         Searched libraries:
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 19
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:20:36 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:20:36 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:20:36 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:20:36 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:20:36 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:20:36 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:20:36 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:20:36 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:20:36 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:20:36 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb 
+# Start time: 21:18:19 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# ** Error: (vsim-3033) ./RAM_32_8_1port.v(63): Instantiation of 'altsyncram' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+#         Searched libraries:
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# ** Error: (vsim-3033) ./binary.sv(30): Instantiation of 'seg7' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut File: ./binary.sv
+#         Searched libraries:
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# ** Error: (vsim-3033) ./binary.sv(31): Instantiation of 'seg7' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut File: ./binary.sv
+#         Searched libraries:
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 19
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:17 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:21:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:17 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:21:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:17 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:21:18 on Nov 06,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:18 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:21:18 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:18 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:21:18 on Nov 06,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
-# Start time: 07:19:05 on Nov 03,2023
+# Start time: 21:18:19 on Nov 06,2023
 # Loading sv_std.std
 # Loading work.binary_tb
 # Loading work.binary
@@ -56,23 +251,967 @@ do runlab.do
 # Loading work.binaryDataPath
 # Loading work.RAM_32_8_1port
 # Loading altera_mf_ver.altsyncram
+# ** Error: (vsim-3033) ./binary.sv(30): Instantiation of 'seg7' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut File: ./binary.sv
+#         Searched libraries:
+#             C:/intelFPGA_lite/17.0/modelsim_ase/altera/verilog/altera_mf
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# ** Error: (vsim-3033) ./binary.sv(31): Instantiation of 'seg7' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut File: ./binary.sv
+#         Searched libraries:
+#             C:/intelFPGA_lite/17.0/modelsim_ase/altera/verilog/altera_mf
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 18
+do ruun
+# Cannot open macro file: ruun
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:38 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:21:39 on Nov 06,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:39 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:21:39 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:39 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:21:39 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:39 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:21:39 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:39 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:21:39 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:39 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:21:39 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:18:19 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./binaryDataPath.sv(22): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
-#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/Data/RAM File: ./RAM_32_8_1port.v
-# ** Warning: (vsim-3015) ./binaryDataPath.sv(22): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
-#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/Data/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
-#           Attempting to use alternate WLF file "./wlft5bxvme".
+#           Attempting to use alternate WLF file "./wlftfct4jg".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft5bxvme
+#           Using alternate file: ./wlftfct4jg
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/Done'.
+# Executing ONERROR command at macro ./wave.do line 7
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/Found'.
+# Executing ONERROR command at macro ./wave.do line 8
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/compute_M'.
+# Executing ONERROR command at macro ./wave.do line 9
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/Set_LSB'.
+# Executing ONERROR command at macro ./wave.do line 10
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/Set_MSB'.
+# Executing ONERROR command at macro ./wave.do line 11
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/init'.
+# Executing ONERROR command at macro ./wave.do line 12
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/LSB'.
+# Executing ONERROR command at macro ./wave.do line 14
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/MSB'.
+# Executing ONERROR command at macro ./wave.do line 15
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/M'.
+# Executing ONERROR command at macro ./wave.do line 16
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/q'.
+# Executing ONERROR command at macro ./wave.do line 17
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/FSM/ps'.
+# Executing ONERROR command at macro ./wave.do line 18
+# ** Error: (vish-4014) No objects found matching '/binary_tb/dut/FSM/ns'.
+# Executing ONERROR command at macro ./wave.do line 19
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./binary.sv(44)
-#    Time: 755 ps  Iteration: 0  Instance: /binary_tb
-# Break in Module binary_tb at ./binary.sv line 44
-# End time: 07:29:18 on Nov 03,2023, Elapsed time: 0:10:13
+# ** Note: $stop    : ./binary.sv(59)
+#    Time: 545 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 59
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:22:14 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:22:14 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:22:14 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:22:14 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:22:14 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:22:14 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:22:14 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:22:14 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:22:15 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:22:15 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:22:15 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:22:15 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:22:15 on Nov 06,2023, Elapsed time: 0:03:56
+# Errors: 43, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:22:15 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlfttyk796".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttyk796
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(59)
+#    Time: 545 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 59
+add wave -position 3  sim:/binary_tb/LEDR[9]
+add wave -position 4  sim:/binary_tb/LEDR[0]
+add wave -position 2  sim:/binary_tb/KEY[3]
+add wave -position 3  sim:/binary_tb/KEY[0]
+add wave -position 1  sim:/binary_tb/SW[7]
+add wave -position 2  sim:/binary_tb/SW[6]
+add wave -position 3  sim:/binary_tb/SW[5]
+add wave -position 4  sim:/binary_tb/SW[4]
+add wave -position 5  sim:/binary_tb/SW[3]
+add wave -position 6  sim:/binary_tb/SW[2]
+add wave -position 7  sim:/binary_tb/SW[1]
+add wave -position 8  sim:/binary_tb/SW[0]
+add list \
+{sim:/binary_tb/SW[7]} \
+{sim:/binary_tb/SW[6]} \
+{sim:/binary_tb/SW[5]} \
+{sim:/binary_tb/SW[4]} \
+{sim:/binary_tb/SW[3]} \
+{sim:/binary_tb/SW[2]} \
+{sim:/binary_tb/SW[1]} \
+{sim:/binary_tb/SW[0]} 
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:24:57 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:24:57 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:24:57 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:24:57 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:24:57 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:24:57 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:24:57 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:24:58 on Nov 06,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:24:58 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:24:58 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:24:58 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:24:58 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:24:58 on Nov 06,2023, Elapsed time: 0:02:43
 # Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:24:58 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlft2851hg".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2851hg
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(59)
+#    Time: 545 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 59
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:42:47 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:42:47 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:42:48 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:42:48 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:42:48 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:42:48 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:42:48 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:42:48 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:42:48 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:42:48 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:42:48 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:42:48 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:42:49 on Nov 06,2023, Elapsed time: 0:17:51
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:42:49 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlftaxrt5r".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftaxrt5r
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(67)
+#    Time: 1645 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 67
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/wave.do}
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:30 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:45:30 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:30 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:45:30 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:30 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:45:30 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:30 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:45:30 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:30 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:45:30 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:45:30 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:45:30 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:45:33 on Nov 06,2023, Elapsed time: 0:02:44
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:45:33 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlftwccwi4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwccwi4
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(67)
+#    Time: 265 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 67
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:34 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:46:34 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:34 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:46:34 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:34 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:46:34 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:34 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:46:34 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:34 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:46:34 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:46:34 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:46:34 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:46:37 on Nov 06,2023, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:46:37 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlftx75wt6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftx75wt6
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(68)
+#    Time: 765 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 68
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:35 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:47:35 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:35 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:47:35 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:35 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:47:35 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:35 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:47:35 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:35 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:47:35 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:35 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:47:35 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:47:38 on Nov 06,2023, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:47:38 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlfttbf1sc".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttbf1sc
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(68)
+#    Time: 305 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 68
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:17 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 21:48:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:17 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 21:48:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:17 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 21:48:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:17 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 21:48:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:17 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 21:48:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:17 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 21:48:17 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:48:33 on Nov 06,2023, Elapsed time: 0:00:55
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 21:48:33 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlftmj4drk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmj4drk
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(67)
+#    Time: 1645 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 67
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:23:37 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 22:23:37 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:23:37 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 22:23:37 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:23:37 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 22:23:38 on Nov 06,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:23:38 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 22:23:38 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:23:38 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 22:23:38 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:23:38 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 22:23:38 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:23:39 on Nov 06,2023, Elapsed time: 0:35:06
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work binary_tb -Lf altera_mf_ver 
+# Start time: 22:23:39 on Nov 06,2023
+# Loading sv_std.std
+# Loading work.binary_tb
+# Loading work.binary
+# Loading work.binaryFSM
+# Loading work.binaryDataPath
+# Loading work.RAM_32_8_1port
+# Loading altera_mf_ver.altsyncram
+# Loading work.seg7
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (8) does not match connection size (32) for port 'data'. The port definition is at: ./RAM_32_8_1port.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-3015) ./binaryDataPath.sv(46): [PCDPC] - Port size (1) does not match connection size (32) for port 'wren'. The port definition is at: ./RAM_32_8_1port.v(44).
+#    Time: 0 ps  Iteration: 0  Instance: /binary_tb/dut/dp/RAM File: ./RAM_32_8_1port.v
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jiovany  Hostname: JIOVANY_HP  ProcessID: 35072
+#           Attempting to use alternate WLF file "./wlftdsdr63".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdsdr63
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./binary.sv(67)
+#    Time: 1645 ps  Iteration: 1  Instance: /binary_tb
+# Break in Module binary_tb at ./binary.sv line 67
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:11 on Nov 06,2023
+# vlog -reportprogress 300 ./counter_cntrl.sv 
+# -- Compiling module counter_cntrl
+# -- Compiling module counter_cntrl_tb
+# 
+# Top level modules:
+# 	counter_cntrl_tb
+# End time: 22:24:11 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:11 on Nov 06,2023
+# vlog -reportprogress 300 ./counter_datapath.sv 
+# -- Compiling module counter_datapath
+# -- Compiling module counter_datapath_tb
+# 
+# Top level modules:
+# 	counter_datapath_tb
+# End time: 22:24:11 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:11 on Nov 06,2023
+# vlog -reportprogress 300 ./counter_toplevel.sv 
+# -- Compiling module counter_toplevel
+# -- Compiling module toplevel_tb
+# 
+# Top level modules:
+# 	toplevel_tb
+# End time: 22:24:11 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:11 on Nov 06,2023
+# vlog -reportprogress 300 ./binary.sv 
+# -- Compiling module binary
+# -- Compiling module binary_tb
+# 
+# Top level modules:
+# 	binary_tb
+# End time: 22:24:11 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:11 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryFSM.sv 
+# -- Compiling module binaryFSM
+# -- Compiling module binaryFSM_tb
+# 
+# Top level modules:
+# 	binaryFSM_tb
+# End time: 22:24:12 on Nov 06,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:12 on Nov 06,2023
+# vlog -reportprogress 300 ./binaryDataPath.sv 
+# -- Compiling module binaryDataPath
+# -- Compiling module binaryDataPath_tb
+# 
+# Top level modules:
+# 	binaryDataPath_tb
+# End time: 22:24:12 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:12 on Nov 06,2023
+# vlog -reportprogress 300 ./DE1_SoC.sv 
+# -- Compiling module DE1_SoC
+# 
+# Top level modules:
+# 	DE1_SoC
+# End time: 22:24:12 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:12 on Nov 06,2023
+# vlog -reportprogress 300 ./RAM_32_8_1port.v 
+# -- Compiling module RAM_32_8_1port
+# 
+# Top level modules:
+# 	RAM_32_8_1port
+# End time: 22:24:12 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:24:12 on Nov 06,2023
+# vlog -reportprogress 300 ./seg7.sv 
+# -- Compiling module seg7
+# 
+# Top level modules:
+# 	seg7
+# End time: 22:24:12 on Nov 06,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:24:13 on Nov 06,2023, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 4
+# vsim -voptargs=""+acc"" -t 1ps -lib work counter_toplevel_tb 
+# Start time: 22:24:13 on Nov 06,2023
+# ** Error: (vsim-3170) Could not find 'counter_toplevel_tb'.
+#         Searched libraries:
+#             C:/Users/Jiova/OneDrive/04. University of Washington Career/04-Fourth Year/Quarter 1/EE 371/Labs/EE371-Labs/Lab 4/lab 4/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 21

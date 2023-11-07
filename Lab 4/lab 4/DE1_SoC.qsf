@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY DE1_SoC
+set_global_assignment -name TOP_LEVEL_ENTITY test
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "THU JUL 11 11:26:45 2013"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -308,6 +308,7 @@ set_global_assignment -name VERILOG_FILE RAM_32_8_1port.v
 set_global_assignment -name SYSTEMVERILOG_FILE binaryDataPath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE binaryFSM.sv
 set_global_assignment -name SYSTEMVERILOG_FILE binary.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../../../../../../../Desktop/test.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

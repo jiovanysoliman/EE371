@@ -21,21 +21,18 @@ module binaryFSM (CLOCK_50, Reset, Start, exhaustedRAM, Found, gt, Compute_M, Se
 		case(ps)
 		
 			idle: ns = Start ? loop : idle;
-// 			idle: ns = Start ? idle : loop;
 			loop: begin
 						if(exhaustedRAM)
 							ns = done;
 						else if(~exhaustedRAM & Found)
 							ns = done;
 						else // (~exhaustedRAM & ~Found)
-//							ns = loop;
 							ns = wait1;
 					end
 			wait1: ns = wait2;
 			wait2: ns = wait3;
 			wait3: ns = loop;
 			done: ns = done; // stay here until user presses Reset
-			
 			default: ns = idle;
 		endcase
 	end
@@ -97,4 +94,4 @@ module binaryFSM_tb();
 																exhaustedRAM <= 1; Found <= 1; gt <= 1; repeat(3) @(posedge CLOCK_50);
 																																  $stop;
 	end
-endmodule
+endmodule // binaryFSM_tb

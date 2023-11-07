@@ -34,7 +34,7 @@ module counter_datapath(clk, A, load_A, r_shift_A, incr_result, clr_result, A_ze
 	assign A_zero = (a == 8'b0);
 	assign got_1 = (a[0] == 1'b1);		
 	
-endmodule 
+endmodule // counter_datapath
 
 module counter_datapath_tb();
 	logic clk, load_A, r_shift_A, incr_result, clr_result;

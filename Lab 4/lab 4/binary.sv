@@ -54,10 +54,17 @@ module binary_tb();
 	initial begin
 		// reset		 start	     A = 4
 		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 0; SW[1] <= 1; SW[0] <= 1;          @(posedge CLOCK_50);
+		KEY[0] <= 1; 																																				repeat(4) @(posedge CLOCK_50);
+		KEY[3] <= 0;																																 				repeat(50)@(posedge CLOCK_50);
+		// reset		 start	     A = 5		 
+		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 1; SW[1] <= 0; SW[0] <= 1; @(posedge CLOCK_50);
 		KEY[0] <= 1; 																																				 repeat(4) @(posedge CLOCK_50);
-						 KEY[3] <= 0;																																 repeat(50)@(posedge CLOCK_50);
-																																													  $stop;
-		
+		KEY[3] <= 0;																																 				repeat(50)@(posedge CLOCK_50);
+		// reset		 start	     A = 7						
+		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 1; SW[1] <= 1; SW[0] <= 1; @(posedge CLOCK_50);
+		KEY[0] <= 1; repeat(4) @(posedge CLOCK_50);
+		KEY[3] <= 0; repeat(50)@(posedge CLOCK_50);
+		$stop;
 	end
 
 endmodule
