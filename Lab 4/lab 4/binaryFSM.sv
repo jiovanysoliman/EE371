@@ -1,3 +1,7 @@
+// Module to implement the finite state machine portion of task 2, the binary search algorithim. 
+// CLOCK_50, Reset, Start, exhaustedRAM, Found, gt are single bit inputs.
+// Compute_M, Set_LSB, Set_MSB, init are single bit outputs.
+//
 `timescale 1 ps / 1 ps
 module binaryFSM (CLOCK_50, Reset, Start, exhaustedRAM, Found, gt, Compute_M, Set_LSB, Set_MSB, init);
 	// external inputs 
