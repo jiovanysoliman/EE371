@@ -73,7 +73,7 @@ module DE1_SoC(CLOCK_50, SW, KEY, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, LEDR);
 	assign LEDR[9] = d; // indicates done state for either counter or binary
 	assign LEDR[0] = f; // off for counter, used for binary to indicate Found
 
-endmodule
+endmodule // DE1_SoC
 
 
 //module DE1_SoC_tb();
