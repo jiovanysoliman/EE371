@@ -10,7 +10,7 @@ cModel Technology
 dC:/Users/Mexipino/OneDrive/Documents/School/EE 371 Design of Digital Circuits and Systems/Labs/My labs/My Lab 4 files/lab 4
 vbinary
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1699338251
+Z1 !s110 1699340218
 !i10b 1
 !s100 mf>T8E5?606zQ]5BE1Knh3
 IJkXB1=49bH<lK0RUNWfZS2
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1699338251.000000
+Z9 !s108 1699340218.000000
 Z10 !s107 ./binary.sv|
 Z11 !s90 -reportprogress|300|./binary.sv|
 !i113 1
@@ -56,7 +56,7 @@ R11
 R12
 vbinaryDataPath
 R0
-Z14 !s110 1699338252
+Z14 !s110 1699340219
 !i10b 1
 !s100 5:C6:ETK058_0Z5e0F6973
 I>]Kbdm]9GOK6Amk9PNcU`3
@@ -72,7 +72,7 @@ R8
 r1
 !s85 0
 31
-Z19 !s108 1699338252.000000
+Z19 !s108 1699340219.000000
 Z20 !s107 ./binaryDataPath.sv|
 Z21 !s90 -reportprogress|300|./binaryDataPath.sv|
 !i113 1
@@ -120,7 +120,7 @@ R8
 r1
 !s85 0
 31
-R9
+R19
 Z26 !s107 ./binaryFSM.sv|
 Z27 !s90 -reportprogress|300|./binaryFSM.sv|
 !i113 1
@@ -144,7 +144,7 @@ R8
 r1
 !s85 0
 31
-R9
+R19
 R26
 R27
 !i113 1
@@ -252,7 +252,7 @@ R2
 Z40 !s105 counter_toplevel_sv_unit
 S1
 R4
-Z41 w1699050610
+Z41 w1699339281
 Z42 8./counter_toplevel.sv
 Z43 F./counter_toplevel.sv
 L0 1
@@ -265,30 +265,125 @@ Z44 !s107 ./counter_toplevel.sv|
 Z45 !s90 -reportprogress|300|./counter_toplevel.sv|
 !i113 1
 R12
-vDE1_SoC
+vcounter_toplevel_tb
+R0
+R1
+!i10b 1
+!s100 j1=h<2ij:WAY2HF<e558O2
+IP?eKHkHd:H9[EF[^DzXcT0
+R2
+R40
+S1
+R4
+R41
+R42
+R43
+R13
+R8
+r1
+!s85 0
+31
+R9
+R44
+R45
+!i113 1
+R12
+vD_FF
 R0
 R14
 !i10b 1
-!s100 KCLQ]_KMA[=:^InLlbz^M1
-IZnbkW6e5^o=gW>>J60T8X1
+!s100 1QhRa8@nm`[@1VO6iZCKV2
+I9_Q26?E1BV9:I8^NOkn9F0
 R2
-!s105 DE1_SoC_sv_unit
+Z46 !s105 D_FF_sv_unit
 S1
 R4
-w1699324573
-8./DE1_SoC.sv
-F./DE1_SoC.sv
-L0 6
+Z47 w1699067862
+Z48 8./D_FF.sv
+Z49 F./D_FF.sv
+L0 3
 R8
 r1
 !s85 0
 31
 R19
-!s107 ./DE1_SoC.sv|
-!s90 -reportprogress|300|./DE1_SoC.sv|
+Z50 !s107 ./D_FF.sv|
+Z51 !s90 -reportprogress|300|./D_FF.sv|
+!i113 1
+R12
+n@d_@f@f
+vD_FF_testbench
+R0
+R14
+!i10b 1
+!s100 D>;V5UHV9iel<z1llgO2T1
+IH7n^4kUB]hoUc]hEZY3h<0
+R2
+R46
+S1
+R4
+R47
+R48
+R49
+L0 13
+R8
+r1
+!s85 0
+31
+R19
+R50
+R51
+!i113 1
+R12
+n@d_@f@f_testbench
+vDE1_SoC
+R0
+R14
+!i10b 1
+!s100 dPRi5b`Rf`Ym@U[`HY0L91
+Ifd`010hJ1m;@[laVPd`gf3
+R2
+Z52 !s105 DE1_SoC_sv_unit
+S1
+R4
+Z53 w1699340215
+Z54 8./DE1_SoC.sv
+Z55 F./DE1_SoC.sv
+L0 7
+R8
+r1
+!s85 0
+31
+R19
+Z56 !s107 ./DE1_SoC.sv|
+Z57 !s90 -reportprogress|300|./DE1_SoC.sv|
 !i113 1
 R12
 n@d@e1_@so@c
+vDE1_SoC_tb
+R0
+R14
+!i10b 1
+!s100 3jLZ]1Uf];54amiZj8<3U0
+I0AXSHPOzIk`=EW@EkGbk`1
+R2
+R52
+S1
+R4
+R53
+R54
+R55
+L0 80
+R8
+r1
+!s85 0
+31
+R19
+R56
+R57
+!i113 1
+R12
+n@d@e1_@so@c_tb
 vRAM_32_8_1port
 R14
 !i10b 1
@@ -299,7 +394,7 @@ R4
 w1698957688
 8./RAM_32_8_1port.v
 F./RAM_32_8_1port.v
-Z46 L0 40
+Z58 L0 40
 R8
 r1
 !s85 0
@@ -335,7 +430,7 @@ R19
 R12
 vtoplevel_tb
 R0
-R1
+!s110 1699338251
 !i10b 1
 !s100 0mzj0=4@CN0dGj3l?>SiM1
 ILgF5FA:QWMU5P8CVI@Zmm2
@@ -343,15 +438,15 @@ R2
 R40
 S1
 R4
-R41
+w1699050610
 R42
 R43
-R46
+R58
 R8
 r1
 !s85 0
 31
-R9
+!s108 1699338251.000000
 R44
 R45
 !i113 1

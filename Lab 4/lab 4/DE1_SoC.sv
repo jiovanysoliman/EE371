@@ -3,6 +3,7 @@
 // KEY is a 4 bit input
 // HEX5- HEX0 is a 7 bit output.
 // LEDR is a single bit output. 
+`timescale 1 ps / 1 ps
 module DE1_SoC(CLOCK_50, SW, KEY, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, LEDR);
 	input logic CLOCK_50;
 	input logic [9:0] SW;
@@ -75,9 +76,50 @@ module DE1_SoC(CLOCK_50, SW, KEY, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, LEDR);
 
 endmodule // DE1_SoC
 
+`timescale 1 ps / 1 ps
+module DE1_SoC_tb();
 
-//module DE1_SoC_tb();
-//
-//
-//
-//endmodule 
+	logic CLOCK_50;	// 50MHz clock
+	logic [9:0] SW;
+	logic [3:0] KEY;
+	logic [9:0] LEDR;
+	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;	// active low
+	
+	DE1_SoC dut(.*);
+	
+	parameter CLOCK_PERIOD = 10;
+	initial begin
+		CLOCK_50 <= 0;
+		forever #(CLOCK_PERIOD/2) CLOCK_50 <= ~CLOCK_50;
+	end
+	
+	integer i;
+	initial begin
+		SW[9] <= 0; @(posedge CLOCK_50);
+		
+		// reset		 start	     A = 4
+		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 0; SW[1] <= 1; SW[0] <= 1;          @(posedge CLOCK_50);
+		KEY[0] <= 1; 																																				repeat(4) @(posedge CLOCK_50);
+		KEY[3] <= 0;																																 				repeat(50)@(posedge CLOCK_50);
+		
+		// reset		 start	     A = 5		 
+		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 1; SW[1] <= 0; SW[0] <= 1; @(posedge CLOCK_50);
+		KEY[0] <= 1; 																																				 repeat(4) @(posedge CLOCK_50);
+		KEY[3] <= 0;																																 				repeat(50)@(posedge CLOCK_50);
+		
+		SW[9] <= 1; @(posedge CLOCK_50);
+		
+		// reset		 start	     A = 4
+		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 0; SW[1] <= 1; SW[0] <= 1;          @(posedge CLOCK_50);
+		KEY[0] <= 1; 																																				repeat(4) @(posedge CLOCK_50);
+		KEY[3] <= 0;																																 				repeat(50)@(posedge CLOCK_50);
+		
+		// reset		 start	     A = 5		 
+		KEY[0] <= 0; KEY[3] <= 1; SW[7] <= 0; SW[6] <=0;  SW[5] <= 0; SW[4] <= 0; SW[3] <= 0; SW[2] <= 1; SW[1] <= 0; SW[0] <= 1; @(posedge CLOCK_50);
+		KEY[0] <= 1; 																																				 repeat(4) @(posedge CLOCK_50);
+		KEY[3] <= 0;																																 				repeat(50)@(posedge CLOCK_50);
+		
+		$stop;
+		
+		end
+endmodule // DE1_SoC_tb
