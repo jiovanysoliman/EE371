@@ -169,7 +169,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 //
 //		else begin
 //			
-//			// update the output of linedrawer to be x_out and y_out
+//			// if you uncomment this, you will have to update the output of linedrawer to be x_out and y_out
 //			x = x_out;
 //			y = y_out;
 //		end
