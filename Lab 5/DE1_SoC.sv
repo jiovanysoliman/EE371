@@ -161,10 +161,17 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 //			for (i = 0; i <= 479; i++) begin : ycount
 //				for (j = 0; j <= 639; j++) begin : xcount
 //					color = 0;
-//					x = j
+//					x = j;
 //					y = i;
 //				end
 //			end
+//		end
+//
+//		else begin
+//			
+//			// update the output of linedrawer to be x_out and y_out
+//			x = x_out;
+//			y = y_out;
 //		end
 //	end
 	
