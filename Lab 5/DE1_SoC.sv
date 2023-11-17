@@ -155,6 +155,20 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 	
 	end
 	
+//	always_comb begin
+//		integer i, j;
+//		if (reset) begin
+//			for (i = 0; i <= 479; i++) begin : ycount
+//				for (j = 0; j <= 639; j++) begin : xcount
+//					color = 0;
+//					x = j
+//					y = i;
+//				end
+//			end
+//		end
+//	end
+	
+	
 	clock_divider cdiv (.clock(CLOCK_50), .divided_clocks);
 	
 	counter animator (.reset, .clock(divided_clocks[20]), .count);
