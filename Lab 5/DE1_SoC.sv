@@ -34,6 +34,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 	output VGA_HS;
 	output VGA_SYNC_N;
 	output VGA_VS;
+	logic [31:0] divided_clocks;
+	logic color;
 	
 	assign HEX0 = '1;
 	assign HEX1 = '1;
@@ -45,6 +47,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 	
 	logic [10:0] x0, y0, x1, y1, x, y;
 	logic reset;
+	logic [4:0] count;
 	
 	VGA_framebuffer fb (
 		.clk50			(CLOCK_50), 
@@ -52,7 +55,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 		.x(x), 
 		.y(y),
 		.pixel_color	(1'b1), 
-		.pixel_write	(1'b1),
+		.pixel_write	(color),
 		.VGA_R, 
 		.VGA_G, 
 		.VGA_B, 
@@ -64,13 +67,101 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
 				
 	logic done;
 
+	always_comb begin
+		case(count)
+			0: begin
+			    color = 1;
+				x0 = 120;
+				y0 = 200;
+				x1 = 320;
+				y1 = 300;
+			
+			end
+			
+			1: begin
+			    color = 0;
+				x0 = 120;
+				y0 = 200;
+				x1 = 320;
+				y1 = 300;
+			
+			end
+			
+			2: begin
+				color = 1;
+				x0 = 320;
+				y0 = 200;
+				x1 = 320;
+				y1 = 300;
+			
+			end
+			
+			3: begin
+				color = 0;
+				x0 = 320;
+				y0 = 200;
+				x1 = 320;
+				y1 = 300;
+			
+			end
+			
+			4: begin
+				color = 1;
+				x0 = 420;
+				y0 = 200;
+				x1 = 320;
+				y1 = 300;
+			
+			end
+			
+			5: begin
+				color = 0;
+				x0 = 420;
+				y0 = 200;
+				x1 = 320;
+				y1 = 300;
+			
+			end
+			
+			6: begin
+				color = 1;
+				x0 = 120;
+				y0 = 250;
+				x1 = 420;
+				y1 = 250;
+			
+			end
+			
+			7: begin
+				color = 0;
+				x0 = 120;
+				y0 = 250;
+				x1 = 420;
+				y1 = 250;
+			
+			end
+			
+			
+			default: begin
+				color = 0;
+				x0 = 0;
+				y0 = 0;
+				x1 = 0;
+				y1 = 0;
+			
+			end
+		
+		endcase
+	
+	end
+	
+	clock_divider cdiv (.clock(CLOCK_50), .divided_clocks);
+	
+	counter animator (.reset, .clock(divided_clocks[20]), .count);
+	
 	line_drawer lines (.clk(CLOCK_50), .reset(reset), .x0(x0), .y0(y0), .x1(x1), .y1(y1), .x(x), .y(y), .done(done));
 	
 	assign LEDR[9] = done;
 	assign reset = SW[9];
-	assign x0 = 100;
-	assign y0 = 450;
-	assign x1 = 200;
-	assign y1 = 100;
 
 endmodule  // DE1_SoC
