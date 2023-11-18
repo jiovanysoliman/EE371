@@ -25,9 +25,14 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
     * such as error and direction.
     */
 	 
+	 // temp variables for line corrections
 	 logic [10:0] x0temp1, y0temp1, x1temp1, y1temp1;
 	 logic [10:0] x0temp2, y0temp2, x1temp2, y1temp2;
+	 
+	 // variables for x and y coordinate assignments
 	 logic [10:0] nextX, nextY;
+	 
+	 // pther variables for line drawing algorithm
 	 logic [10:0] absX, absY;
     logic signed [11:0] error, deltax, deltay;
     logic isSteep, doneSignal;
@@ -66,6 +71,7 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
 				y1temp2 = y1temp1;
 		end		
 		
+		// deterine if y will decrement or increment 
 		if(y0temp2 < y1temp2) 
 			y_step = 1;
 		else
@@ -73,12 +79,12 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
 			
 	 end // always_comb
 	 
-	 // deltaX is always positive (after the correction from x0 > x1)
-		assign deltax = (x1temp2 - x0temp2); 
-		assign deltay = (y1temp2 > y0temp2) ? (y1temp2 - y0temp2) : (y0temp2 - y1temp2); // absolute value
+	 // calculate detlax and deltay for the algorithm
+	 assign deltax = (x1temp2 - x0temp2); 
+	 assign deltay = (y1temp2 > y0temp2) ? (y1temp2 - y0temp2) : (y0temp2 - y1temp2); // absolute value
 	 
 	 always_ff @(posedge clk) begin
-		if(reset) begin
+		if(reset) begin // reset state, initialize nextX and nextY, error, and doneSignal
 			nextX <= x0temp2;
 			nextY <= y0temp2;
 			error <= -(deltax/2);
@@ -86,7 +92,8 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
 		end else if(nextX <= (x1temp2)) begin // for x from x0 to x1 (inclusive)
 			nextX <= nextX + 1;
 				
-			if(isSteep) begin
+			// swap x and y if the slope is steep (prevents multiple y's from being assigned to a single x)
+			if(isSteep) begin 
 				x <= nextY;
 				y <= nextX;
 			end else begin
@@ -94,6 +101,7 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
 				y <= nextY;
 			end
 			
+			// algorithm to determine if y should be stepped or not for best approximation of the line
 			if(error + deltay >= 0) begin
 				nextY <= nextY + y_step;
 				error <= error + deltay - deltax;
@@ -102,9 +110,10 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
 				error <= error + deltay;
 			end
 			
+			// if we reached the end point, then line is done drawing
 			if((nextX == x1temp2) && (nextY == y1temp2))
 				doneSignal <= 1;
-	   end 
+	   end // end (nextX <= (x1temp2)
 	end // always_ff
 	 
 	 assign done = doneSignal; 
@@ -130,71 +139,53 @@ module tb();
 	
 	initial begin
 	
-		// test horizontal line from on screen left to right
-//		reset <= 1;	x0 <= 11'd3;  y0 <= 11'd4; x1 <= 11'd15;  y1 <= 11'd4;            			@(posedge clk); // slope = 0
-//		reset <= 0;																						 repeat(40) @(posedge clk);
+		// test vertical both ways: A(5,0) B(5,10)
+		reset <= 1;	x0 <= 11'd5;  y0 <= 11'd0; x1 <= 11'd5;  y1 <= 11'd10;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd5;  y0 <= 11'd10; x1 <= 11'd5;  y1 <= 11'd0;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test horizontal line from on screen right to left
-//		reset <= 1;	x0 <= 11'd15;  y0 <= 11'd4; x1 <= 11'd3;  y1 <= 11'd4;            			@(posedge clk); // slope = 0
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-
-
-		// test gradual slope from on screen left to right (positive)
-//		reset <= 1;	x0 <= 11'd0;  y0 <= 11'd15; x1 <= 11'd15;  y1 <= 11'd0;            			@(posedge clk); 
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-
-
-		reset <= 1;	x0 <= 11'd0;  y0 <= 11'd450; x1 <= 11'd600;  y1 <= 11'd450;            		 @(posedge clk); 
-		reset <= 0;																						 repeat(700) @(posedge clk);
+		// test horizontal both ways: A(10, 20) B(20,20)
+		reset <= 1;	x0 <= 11'd10;  y0 <= 11'd20; x1 <= 11'd20;  y1 <= 11'd20;                  @(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd20;  y0 <= 11'd20; x1 <= 11'd10;  y1 <= 11'd20;           			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test diagonal line from on screen left to right
-//		reset <= 1;	x0 <= 11'd2;  y0 <= 11'd0; x1 <= 11'd10;  y1 <= 11'd8;                     @(posedge clk); // slope = 1
-//		reset <= 0;																			          repeat(40) @(posedge clk);
+		// test diagonal both ways (positive): A(0,10) B(10,0)
+		reset <= 1;	x0 <= 11'd0;  y0 <= 11'd10; x1 <= 11'd10;  y1 <= 11'd0;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd10;  y0 <= 11'd0; x1 <= 11'd0;  y1 <= 11'd10;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test gradual slope left to right -- less steep (negative)
-//		reset <= 1; x0 <= 11'd0; y0 <= 11'd0; x1 <= 11'd15;	y1 <= 11'd10; 			            @(posedge clk); // slope < 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-
-
+		// test diagonal both ways (negative): A(0,0) B(10,10)
+		reset <= 1;	x0 <= 11'd0;  y0 <= 11'd0; x1 <= 11'd10;  y1 <= 11'd10;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd10;  y0 <= 11'd10; x1 <= 11'd0;  y1 <= 11'd0;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test gradual slope from left to right -- even less steep (negative)
-//		reset <= 1; x0 <= 11'd0; y0 <= 11'd0; x1 <= 11'd15;	y1 <= 11'd5; 			            @(posedge clk); // slope < 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
+		// test left-up and right-down, steep slope, both ways: A(1,15) B(3,3)
+		reset <= 1;	x0 <= 11'd1;  y0 <= 11'd15; x1 <= 11'd3;  y1 <= 11'd3;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd3;  y0 <= 11'd3; x1 <= 11'd1;  y1 <= 11'd15;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test gradual slope from right to left -- even less steep (negative)
-//		reset <= 1; x0 <= 11'd15; y0 <= 11'd5; x1 <= 11'd0;	y1 <= 11'd0; 			            @(posedge clk); // slope < 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-
-
+		// test left-up and right-down, gradual slope, both ways: A(1,15) B(10,10)
+		reset <= 1;	x0 <= 11'd1;  y0 <= 11'd15; x1 <= 11'd10;  y1 <= 11'd10;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd10;  y0 <= 11'd10; x1 <= 11'd1;  y1 <= 11'd15;             		@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test gradual slope from left to right -- more steep (negative)
-//		reset <= 1; x0 <= 11'd0; y0 <= 11'd0; x1 <= 11'd10;	y1 <= 11'd15; 			            @(posedge clk); // slope > 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
+		// test right-up and left-down, steep slope, both ways: A(0,0) B(5,10)
+		reset <= 1;	x0 <= 11'd0;  y0 <= 11'd0; x1 <= 11'd5;  y1 <= 11'd10;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd5;  y0 <= 11'd10; x1 <= 11'd0;  y1 <= 11'd0;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 		
-		// test gradual slope from right to left -- more steep (negative)
-//		reset <= 1; x0 <= 11'd10; y0 <= 11'd15; x1 <= 11'd0;	y1 <= 11'd0; 			            @(posedge clk); // slope > 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-
-
-		
-		// test horizontal line from left to right -- even more steep (negative)
-//		reset <= 1; x0 <= 11'd0; y0 <= 11'd0; x1 <= 11'd5;	y1 <= 11'd15; 			               @(posedge clk); // slope > 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-		
-		// test horizontal line from right to left -- even more steep (negative)
-//		reset <= 1; x0 <= 11'd5; y0 <= 11'd15; x1 <= 11'd0;	y1 <= 11'd0; 			            @(posedge clk); // slope > 1
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-
-
-		
-		// test vertical line from on screen
-//		reset <= 1; x0 <= 11'd5; y0 <= 11'd0; x1 <= 11'd5;	y1 <= 11'd10; 			               @(posedge clk); // slope = undefined
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-		
-		// test vertical line from off screen
-//		reset <= 1; x0 <= 11'd5; y0 <= 11'd11111111110; x1 <= 11'd5;	y1 <= 11'd10; 			   @(posedge clk); // slope = undefined
-//		reset <= 0;																						 repeat(40) @(posedge clk);
-						
+		// test right-up and left-down, gradual slope, both ways: A(0,0) B(10,5)
+		reset <= 1;	x0 <= 11'd0;  y0 <= 11'd0; x1 <= 11'd10;  y1 <= 11'd5;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
+		reset <= 1;	x0 <= 11'd10;  y0 <= 11'd5; x1 <= 11'd0;  y1 <= 11'd0;            			@(posedge clk);
+		reset <= 0;																						 repeat(20) @(posedge clk);
 																												$stop;
 																								 
 	end

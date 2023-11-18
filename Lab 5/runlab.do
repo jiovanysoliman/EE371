@@ -5,8 +5,9 @@ vlib work
 #     All Verilog files that are part of this design should have
 #     their own "vlog" line below.
 vlog "./line_drawer.sv"
-#vlog "./DE1_SoC.sv"
-#vlog "./VGA_framebuffer.sv"
+vlog "./DE1_SoC.sv"
+vlog "./VGA_framebuffer.sv"
+vlog "./clock_divider.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
@@ -16,7 +17,7 @@ vsim -voptargs="+acc" -t 1ps -lib work tb
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do line_drawing_wave.do
+do line_drawer_wave.do
 
 # Set the window types
 view wave
