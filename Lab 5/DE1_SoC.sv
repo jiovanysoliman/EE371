@@ -290,7 +290,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW, CLOCK_50,
     end
     
     always_ff @(posedge animator_clk) begin
-        if(SW[0]) // reset the VGA buffer
+        if(SW[0]) // clear screen
             ps <= idle;
         else
             ps <= ns;
