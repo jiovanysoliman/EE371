@@ -64,6 +64,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	end 
 	
 	
+	counter lives #(MAX_COUNT = 4)( .reset(SW[9]), clock, count);
+	
 /////////////// This's closer to the final code //////////////////////////////////////
 
 //	always_comb begin 
@@ -118,8 +120,8 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	assign HEX3 = '1;
 	assign HEX4 = '1;
 	assign HEX5 = '1;
-	assign reset = '0;
-	assign clear = SW[9];
+	assign reset = SW[9];
+	assign clear = ~KEY[0];
 
 	
 endmodule  // DE1_SoC
