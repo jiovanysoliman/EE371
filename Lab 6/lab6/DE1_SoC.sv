@@ -20,7 +20,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	logic [2:0] level, display;
 	logic [9:0] x;
 	logic [8:0] y;
-	logic [0:639] q, q0, q1, q2, q3, qintro, qgameOver;
+	logic [0:639] q, q0, q1, q2, q3, qintro, qgameOver, qwinning;
 	logic [7:0] r, g, b;
 	logic color;
 	
@@ -41,6 +41,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	ROM_640x480_No3_1channel ROM3 (.address(y), .clock(CLOCK_50), .q(q3));
 	ROM_640x480_intro_1channel ROMintro (.address(y), .clock(CLOCK_50), .q(qintro));
 	ROM_640x480_gameOver_1channel ROMgameOver (.address(y), .clock(CLOCK_50), .q(qgameOver));
+	ROM_640x480_winning_1channel ROMwinning (.address(y), .clock(CLOCK_50), .q(qwinning));
 	
 	memoryGame ourGame (.clk(CLOCK_50), 
 							  .reset(reset), 
@@ -63,7 +64,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	assign LEDR[8:0] = victory;
 
 	
-// enum {intro, zero, one, two, three, gameOver} ps, ns; 
+// enum {intro, zero, one, two, three, gameOver, winning} ps, ns; 
 	always_comb begin 
 		case(display) // Switches for testing purposes only, will have to change to the last 2 bits of the LFSR.
 			3'b100 : begin // rename to intro/idle state
@@ -84,6 +85,9 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 			3'b101 : begin // rename to gameOver
 				q = qgameOver;
 			end
+			3'b111 : begin // rename to winning
+				q = qwinning;
+			end
 			default : begin
 				q = qintro;
 			end
@@ -102,12 +106,13 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
     	end
 	end
 	
-	assign HEX0 = '1;
+	seg7 livesDisplay (.hex($hex(lives)), .leds(HEX0));
+	seg7 levelDisplay (.hex($hex(level)), .leds(HEX5));
+	
 	assign HEX1 = '1;
 	assign HEX2 = '1;
 	assign HEX3 = '1;
 	assign HEX4 = '1;
-	assign HEX5 = '1;
 	
 endmodule  // DE1_SoC
 
