@@ -15,12 +15,19 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	output VGA_SYNC_N;
 	output VGA_VS;
 
-	logic reset, clear;
+	logic reset, clear, start, show_again, restart, ready, victory, next_clk;
+	logic [1:0] lives;
+	logic [2:0] level, display;
 	logic [9:0] x;
 	logic [8:0] y;
 	logic [0:639] q, q0, q1, q2, q3, qintro, qgameOver;
 	logic [7:0] r, g, b;
 	logic color;
+	
+	assign reset = SW[9];
+	assign start = SW[0];
+	assign restart = SW[1];
+	assign show_again = SW[3];
 	
 	video_driver #(.WIDTH(640), .HEIGHT(480))
 		v1 (.CLOCK_50, .reset, .x, .y, .r, .g, .b,
@@ -34,24 +41,44 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	ROM_640x480_No3_1channel ROM3 (.address(y), .clock(CLOCK_50), .q(q3));
 	ROM_640x480_intro_1channel ROMintro (.address(y), .clock(CLOCK_50), .q(qintro));
 	ROM_640x480_gameOver_1channel ROMgameOver (.address(y), .clock(CLOCK_50), .q(qgameOver));
+	
+	memoryGame ourGame (.clk(CLOCK_50), 
+							  .reset(reset), 
+							  .k0(~KEY[0]), 
+							  .k1(~KEY[1]), 
+							  .k2(~KEY[2]), 
+							  .k3(~KEY[3]), 
+							  .start(start), 
+							  .show_again(show_again), 
+							  .restart(restart), 
+							  .level(level),
+							  .ready(ready), 
+							  .victory(victory), 
+							  .display(display), 
+							  .clear(clear),
+							  .lives(lives),
+							  .next_clk(next_clk));
+							  
+	assign LEDR[9] = ready;
+	assign LEDR[8:0] = victory;
 
 	
 // enum {intro, zero, one, two, three, gameOver} ps, ns; 
 	always_comb begin 
-		case(SW[2:0]) // Switches for testing purposes only, will have to change to the last 2 bits of the LFSR.
-			3'b000 : begin // rename to intro
+		case(display) // Switches for testing purposes only, will have to change to the last 2 bits of the LFSR.
+			3'b100 : begin // rename to intro/idle state
 				q = qintro;
 			end
-			3'b001 : begin // rename to zero
+			3'b000 : begin // rename to zero
 				q = q0;
 			end
-			3'b010 : begin // rename to one
+			3'b001 : begin // rename to one
 				q = q1;
 			end
-			3'b011 : begin // rename to two
+			3'b010 : begin // rename to two
 				q = q2;
 			end
-			3'b100 : begin // rename to three
+			3'b011 : begin // rename to three
 				q = q3;
 			end
 			3'b101 : begin // rename to gameOver
@@ -63,53 +90,14 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 		endcase
 	end 
 	
-	
-	counter lives #(MAX_COUNT = 4)( .reset(SW[9]), clock, count);
-	
-/////////////// This's closer to the final code //////////////////////////////////////
-
-//	always_comb begin 
-//		case(SW[1:0]) // Switches for testing purposes only, will have to change to the last 2 bits of the LFSR.
-//			3'b000 : begin // rename to zero
-//				q = q0;
-//			end
-//			3'b001 : begin // rename to one
-//				q = q1;
-//			end
-//			3'b010 : begin // rename to two
-//				q = q2;
-//			end
-//			3'b011 : begin // rename to three
-//				q = q3;
-//			end
-//			default : begin
-//				q = qintro;
-//			end
-//		endcase
-//	end 
-//	
-//	always_comb begin
-//	    case(GameOverSignalFromCounter)
-//			1'0 : begin // rename to intro
-//				q = qintro;
-//			end
-//			1'b1 : begin // rename to gameOver
-//				q = qgameOver;
-//			end
-//			default : begin
-//				q = qintro;
-//			end
-//	    endcase
-//	end
-	
 	always_ff @(posedge CLOCK_50) begin
 	    if (clear) begin // clears the screen without reseting the VGA 
-            r <= 8'd0;
-        	g <= 8'd0;
-            b <= 8'd0;
+            r <= 8'd191;
+				g <= 8'd64;
+            b <= 8'd191;
 		end else begin // displays the correct digit/message based on state logic.
             r <= q[x] ? 8'd191 : 8'd255;
-        	g <= q[x] ? 8'd64 : 8'd215;
+				g <= q[x] ? 8'd64 : 8'd215;
             b <= q[x] ? 8'd191 : 8'd0;
     	end
 	end
@@ -120,9 +108,6 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	assign HEX3 = '1;
 	assign HEX4 = '1;
 	assign HEX5 = '1;
-	assign reset = SW[9];
-	assign clear = ~KEY[0];
-
 	
 endmodule  // DE1_SoC
 
