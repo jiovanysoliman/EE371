@@ -27,7 +27,8 @@ outputs
 
 module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level, ready, victory, display, clear, lives, next_clk);
 	input  logic clk, reset, k0, k1, k2, k3, start, show_again, restart;
-	output logic ready, victory, clear, lives, next_clk;
+	output logic ready, victory, clear, next_clk;
+	output logic [1:0] lives;
 	output logic [2:0] display, level;
 	
 	
@@ -199,7 +200,11 @@ module memoryGame_tb();
 																			k3 <= 1;											 				@(posedge clk);
 																			k3 <= 0;											 				@(posedge clk);
 																k2 <= 1;																		@(posedge clk);
-																k2 <= 0;														 repeat(40) @(posedge clk); // user sequence matches generated sequence (advance to level 3)
+																k2 <= 0;														 repeat(20) @(posedge clk); // user loses last life (game over)
+																											  restart <= 1;            @(posedge clk);
+																											  restart <= 0;            @(posedge clk);
+						start <= 1;																											@(posedge clk);
+						start <= 0;																							 repeat(40) @(posedge clk);
 										k0 <= 1;																								@(posedge clk);
 										k0 <= 0; 																							@(posedge clk);
 										k0 <= 1;																								@(posedge clk);
@@ -215,7 +220,7 @@ module memoryGame_tb();
 										k0 <= 1;																								@(posedge clk);
 										k0 <= 0; 																							@(posedge clk);
 													k1 <= 1;																					@(posedge clk);
-													k1 <= 0; 																 repeat(40) @(posedge clk); // user loses last life, game is over
+													k1 <= 0; 																 repeat(40) @(posedge clk); // user loses a life (2 lives left)
 																																				$stop;
 										
 										

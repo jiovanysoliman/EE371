@@ -37,8 +37,9 @@ OUTPUTS TO CONTROL (STATUS SIGNALS)
 	seq_num----------- used to display the corresponding generated number on the VGA 
 	
 EXTERNAL OUTPUTS 
-	level- what level the user is currently on
-	lives- how many lives the player has left
+	level---- what level the user is currently on
+	lives---- how many lives the player has left
+	next_clk- clock speed at which numbers are dislayed on the VGA
 */
 
 module datapath(clk, 
@@ -110,6 +111,9 @@ module datapath(clk,
 	logic [2:0] seq_counter, user_counter, match_counter;
 	logic show_counter;
 	
+	// other logic
+	logic dead;
+	
 // DATAPATH LOGIC
 	always_ff @(posedge clk) begin
 	
@@ -160,7 +164,17 @@ module datapath(clk,
 			if(user_seq[user_counter] == seq[seq_counter])
 				match_counter <= match_counter + 1;
 		end
-	end
+		
+		// the player only gets 3 lives/chances to guess the sequence correctly throughout the entire game
+		if(init_lives)
+			lives <= 3;
+		else if(decr_lives) 
+			lives <= lives - 1;
+		else 
+			lives <= lives;
+
+	end // end always_ff
+	
 	
 // OUTPUT ASSIGNMENTS
 	assign end_comp = ((user_counter == 7) & (seq_counter == 7));
@@ -175,16 +189,6 @@ module datapath(clk,
 	
 	assign clk_zero = (clk_select == 0);
 	
-	// the player only gets 3 lives/chances to guess the sequence correctly throughout the entire game
-	always_comb begin
-		if(init_lives) begin
-			no_lives = 0;
-			lives = 3;
-		end else if(decr_lives) begin
-			lives = lives - 1;
-			if(lives == 0)
-				no_lives = 1;
-		end
-	end
+	assign no_lives = (lives == 0);
 	
 endmodule 

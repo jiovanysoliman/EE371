@@ -48,7 +48,7 @@ EXTERNAL OUTPUTS
 	display- selects the image to show on the VGA
 	clear--- clears the VGA screen
 	ready--- indicates when the player can input their guess
-	victory- true when the player has won the entire game
+	victory- true when the player has won the entire game 
 */
 
 module gameControl(clk, 
@@ -109,7 +109,7 @@ module gameControl(clk,
 	output logic clear, ready, victory;
 	
 // STATE NAMES AND VARIABLES
-	enum {idle, getSequence, showSeq, showBlank, getInput, compare, gameOver} ps, ns;
+	enum {idle, getSequence, showSeq, showBlank, getInput, compare, live_or_die, results, winner, gameOver} ps, ns;
 	
 	// key_pressed is true only when 1 key is pressed at a time
 	logic key_pressed;
@@ -155,17 +155,26 @@ module gameControl(clk,
 				end
 			compare: // compare user input with generated sequence
 				begin
-					if(end_comp & ~match & ~no_lives)     ns = getInput;
-					else if(end_comp & ~match & no_lives) ns = gameOver;
-					else if(~end_comp)                    ns = compare;
-					else if(end_comp & match & ~clk_zero) ns = getSequence;
-					else if(end_comp & match & clk_zero)  ns = idle;
-					else											  ns = compare;
+					if(end_comp & ~match)     ns = live_or_die;
+					else if(end_comp & match) ns = results;
+					else if(~end_comp)        ns = compare;
+					else							  ns = compare;
+				end
+			live_or_die:
+				begin
+					ns = no_lives ? gameOver : getInput;
+				end
+			results:
+				begin
+					ns = clk_zero ? winner : getSequence;
+				end
+			winner:
+				begin
+					ns = restart ? idle : winner;
 				end
 			gameOver: // game over screen, player lost all lives
 				begin
-					if(restart) ns = idle;
-					else        ns = gameOver;
+					ns = restart ? idle : gameOver;
 				end
 			
 			default:
@@ -178,6 +187,7 @@ module gameControl(clk,
 	always_comb begin
 		if(ps == idle) 		   display = 3'b100;
 		else if(ps == gameOver) display = 3'b101;
+		else if(ps == winner) 	display = 3'b111;
 		else 							display = {1'b0, seq_num};
 	end
 	
@@ -197,25 +207,28 @@ module gameControl(clk,
 	// other output assignments
 	assign init_user_counter = ((ps == idle) & start) |
 										((ps == getInput) & full_input) |
-										((ps == compare) & ((end_comp & ~match & ~no_lives) | (end_comp & match & ~clk_zero)));
+										((ps == results) & ~clk_zero) |
+										((ps == live_or_die) & ~no_lives);
 									
 	assign incr_user_counter = ((ps == getInput) & ((~full_input & ~show_again & key_pressed) |
 																	(~full_input & show_again & show_counter_zero & key_pressed))) |
 										((ps == compare) & ~end_comp);
 		
 	assign init_show_counter = ((ps == idle) & start) | 
-										((ps == compare) & end_comp & match & ~clk_zero);
+										((ps == results) & ~clk_zero);
 	
 	assign init_match_counter = ((ps == getInput) & full_input);
 	
-	assign reset_clk = ((ps == gameOver) & restart) | ((ps == idle) & start);
+	assign reset_clk = ((ps == gameOver) & restart) | 
+							 ((ps == winner) & restart) |
+							 ((ps == idle) & start);
 	
 	assign init_lives = (ps == idle) & start;
 	
 	assign init_seq_counter = ((ps == idle) & start) | 
 									  ((ps == getSequence) & seq_end) | 
 									  ((ps == getInput) & ((~full_input & show_again & ~show_counter_zero)|(full_input))) |
-									  ((ps == compare) & end_comp & match & ~clk_zero);
+									  ((ps == results) & ~clk_zero);
 									  
 	assign init_level = (ps == idle) & start;
 	
@@ -227,7 +240,7 @@ module gameControl(clk,
 									  
 	assign read_seq = (ps == showSeq);
 	
-	assign clear = (ps == getSequence) | (ps == showBlank) | (ps == getInput) | (ps == compare); 
+	assign clear = (ps == getSequence) | (ps == showBlank) | (ps == getInput) | (ps == compare) | (ps == live_or_die) | (ps == results); 
 	
 	assign ready = (ps == getInput);
 	
@@ -244,6 +257,6 @@ module gameControl(clk,
 	
 	assign incr_level = (ps == compare) & end_comp & match;
 	
-	assign victory = (ps == compare) & end_comp & match & clk_zero;
+	assign victory = (ps == results) & clk_zero;
 	
 endmodule 

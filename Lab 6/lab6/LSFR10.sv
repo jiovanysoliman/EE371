@@ -29,7 +29,7 @@ module LSFR10(mod, clk, reset);
 	logic [2:0] c = 3'b100;   // for final mod division
 	logic [3:0] temp1, temp2;
 	
-	assign temp1 = Q % a;
+//	assign temp1 = Q % a;
 	assign temp2 = Q % b;
 	assign mod = temp2 % c;
 
