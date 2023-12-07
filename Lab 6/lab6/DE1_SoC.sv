@@ -57,8 +57,7 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 							  .victory(victory), 
 							  .display(display), 
 							  .clear(clear),
-							  .lives(lives),
-							  .next_clk(next_clk));
+							  .lives(lives));
 							  
 	assign LEDR[9] = ready;
 	assign LEDR[8:0] = victory;
@@ -97,17 +96,17 @@ module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW,
 	always_ff @(posedge CLOCK_50) begin
 	    if (clear) begin // clears the screen without reseting the VGA 
             r <= 8'd191;
-				g <= 8'd64;
+			g <= 8'd64;
             b <= 8'd191;
 		end else begin // displays the correct digit/message based on state logic.
             r <= q[x] ? 8'd191 : 8'd255;
-				g <= q[x] ? 8'd64 : 8'd215;
+			g <= q[x] ? 8'd64 : 8'd215;
             b <= q[x] ? 8'd191 : 8'd0;
     	end
 	end
 	
-	seg7 livesDisplay (.hex($hex(lives)), .leds(HEX0));
-	seg7 levelDisplay (.hex($hex(level)), .leds(HEX5));
+	seg7 livesDisplay (.hex((lives)), .leds(HEX0));
+	seg7 levelDisplay (.hex((level)), .leds(HEX5));
 	
 	assign HEX1 = '1;
 	assign HEX2 = '1;
