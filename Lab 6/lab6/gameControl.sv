@@ -68,6 +68,8 @@ module gameControl(clk,
 						 match, 
 						 clk_zero, 
 						 seq_num, 
+						 goBlank,
+						 goShow,
 						 display, 
 						 init_show_counter, 
 						 reset_clk, 
@@ -89,18 +91,20 @@ module gameControl(clk,
 						 decr_clk, 
 						 incr_level, 
 						 victory,
-						 keyVal);
+						 keyVal,
+						 show_ready,
+						 blank_ready);
 						 
 // PORT DEFINITIONS
 	// EXTERNAL INPUTS
 	input  logic clk, reset, start, restart, show_again, key0, key1, key2, key3; 
 	
 	// STATUS SIGNALS (INPUTS)
-	input  logic seq_end, show_counter_zero, full_input, no_lives, match, clk_zero, end_comp;
+	input  logic seq_end, show_counter_zero, full_input, no_lives, match, clk_zero, end_comp, goBlank, goShow;
 	input  logic [1:0] seq_num;
 	
 	// CONTROL SIGNALS (OUTPUTS)	
-	output logic init_show_counter, reset_clk, init_lives, init_seq_counter, init_level, store_num, incr_seq_counter, init_user_counter;
+	output logic init_show_counter, reset_clk, init_lives, init_seq_counter, init_level, store_num, incr_seq_counter, init_user_counter, show_ready, blank_ready;
 	output logic read_seq, store_input, decr_show_counter, read_input, decr_lives, decr_clk, incr_level, incr_user_counter, init_match_counter;
 	output logic [1:0] keyVal;
 	
@@ -138,11 +142,18 @@ module gameControl(clk,
 				end
 			showSeq: // display generated numbers on the VGA
 				begin
-					ns = showBlank;
+					if(seq_end) ns = showBlank;
+					else if(~seq_end & ~goBlank) ns = showSeq;
+					else if(~seq_end & goBlank) ns = showBlank;
+					else ns = showSeq;
+//					ns = goBlank ? showBlank : showSeq;
 				end
 			showBlank: // show a blank screen between numbers (for repeats)
 				begin
-					ns = seq_end ? getInput : showSeq;
+					if(seq_end)						 ns = getInput;
+					else if(~seq_end & goShow)  ns = showSeq;
+					else if(~seq_end & ~goShow) ns = showBlank;
+					else                        ns = showBlank;
 				end
 			getInput: // get user input from KEYs
 				begin
@@ -205,6 +216,10 @@ module gameControl(clk,
 	end
 	
 	// other output assignments
+	assign show_ready = (ps == showSeq);
+	
+	assign blank_ready = (ps == showBlank);
+	
 	assign init_user_counter = ((ps == idle) & start) |
 										((ps == getInput) & full_input) |
 										((ps == results) & ~clk_zero) |
@@ -235,7 +250,7 @@ module gameControl(clk,
 	assign store_num = (ps == getSequence) & ~seq_end;
 	
 	assign incr_seq_counter = ((ps == getSequence) & ~seq_end) |
-									  ((ps == showBlank) & ~seq_end) |
+									  ((ps == showBlank) & ~seq_end & goShow) |
 									  ((ps == compare) & ~end_comp);
 									  
 	assign read_seq = (ps == showSeq);

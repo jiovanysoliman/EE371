@@ -25,9 +25,9 @@ outputs
 	clear--- clears the VGA screen
 */
 
-module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level, ready, victory, display, clear, lives, next_clk);
+module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level, ready, victory, display, clear, lives);
 	input  logic clk, reset, k0, k1, k2, k3, start, show_again, restart;
-	output logic ready, victory, clear, next_clk;
+	output logic ready, victory, clear;
 	output logic [1:0] lives;
 	output logic [2:0] display, level;
 	
@@ -36,6 +36,7 @@ module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level,
 	logic seq_end, show_counter_zero, full_input, no_lives, match, clk_zero, init_user_counter, incr_user_counter;
 	logic init_show_counter, reset_clk, init_lives, init_seq_counter, init_level, store_num, incr_seq_counter;
 	logic read_seq, store_input, decr_show_counter, read_input, decr_lives, decr_clk, incr_level, init_match_counter, end_comp;
+	logic goShow, goBlank, show_ready, blank_ready;
 	logic b0, b1, b2, b3;
 	logic [1:0] seq_num, keyVal;
 	
@@ -64,6 +65,8 @@ module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level,
 							 .match(match), 
 							 .clk_zero(clk_zero), 
 							 .seq_num(seq_num), 
+							 .goBlank(goBlank),
+							 .goShow(goShow),
 							 .display(display), 
 						    .init_show_counter(init_show_counter), 
 							 .reset_clk(reset_clk), 
@@ -85,7 +88,9 @@ module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level,
 							 .decr_clk(decr_clk), 
 							 .incr_level(incr_level), 
 							 .victory(victory),
-							 .keyVal(keyVal));
+							 .keyVal(keyVal),
+							 .show_ready(show_ready),
+							 .blank_ready(blank_ready));
 					 
 	// instantiate datapath	
 	datapath dp (.clk(clk), 
@@ -108,6 +113,8 @@ module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level,
 					 .decr_clk(decr_clk), 
 					 .incr_level(incr_level),
 					 .keyVal(keyVal),
+					 .show_ready(show_ready), 
+					 .blank_ready(blank_ready),
 					 .seq_end(seq_end), 
 					 .end_comp(end_comp),
 					 .show_counter_zero(show_counter_zero), 
@@ -118,7 +125,8 @@ module memoryGame(clk, reset, k0, k1, k2, k3, start, show_again, restart, level,
 					 .seq_num(seq_num), 
 					 .level(level),
 					 .lives(lives),
-					 .next_clk(next_clk));
+					 .goBlank(goBlank),
+					 .goShow(goShow));
 endmodule 
 
 module memoryGame_tb();
@@ -139,7 +147,7 @@ module memoryGame_tb();
 		reset <= 1; 											  															 repeat(2)  @(posedge clk); // start at level 1
 		reset <= 0;	start <= 0;	k0 <= 0; k1 <= 0; k2 <= 0; k3 <= 0; show_again <= 0; restart <= 0; repeat(4)  @(posedge clk);
 						start <= 1; 															  											@(posedge clk);
-						start <= 0; 							  															 repeat(30) @(posedge clk);
+						start <= 0; 							  															 repeat(500) @(posedge clk);
 													k1 <= 1; 				  					  											@(posedge clk);
 													k1 <= 0; 				  					  											@(posedge clk);
 										k0 <= 1;													  											@(posedge clk);

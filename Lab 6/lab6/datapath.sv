@@ -62,6 +62,8 @@ module datapath(clk,
 					 decr_clk, 
 					 incr_level, 
 					 keyVal,
+					 show_ready, 
+					 blank_ready,
 					 seq_end,
 					 end_comp,
 					 show_counter_zero, 
@@ -72,16 +74,17 @@ module datapath(clk,
 					 seq_num, 
 					 level,
 					 lives,
-					 next_clk);
+					 goBlank,
+					 goShow);
 					 
 // PORT DEFINITIONS			 
 	// CONTROL SIGNALS (INPUTS)
 	input  logic clk, reset, init_show_counter, reset_clk, init_lives, init_seq_counter, init_level, store_num, incr_seq_counter, init_match_counter;
-	input  logic read_seq, store_input, decr_show_counter, read_input, decr_lives, decr_clk, incr_level, init_user_counter, incr_user_counter;
+	input  logic read_seq, store_input, decr_show_counter, read_input, decr_lives, decr_clk, incr_level, init_user_counter, incr_user_counter, show_ready, blank_ready;
 	input  logic [1:0] keyVal;
 	
 	// STATUS SIGNALS (OUTPUTS)
-	output logic seq_end, show_counter_zero, full_input, no_lives, match, clk_zero, end_comp, next_clk;
+	output logic seq_end, show_counter_zero, full_input, no_lives, match, clk_zero, end_comp, goBlank, goShow;
 	output logic [1:0] seq_num, lives;
 	
 	// EXTERNAL OUTPUTS 
@@ -90,11 +93,11 @@ module datapath(clk,
 	// clock divider
 	logic [31:0] divClocks;
 	logic [4:0] clk_select;
-//	logic next_clk;
+	logic next_clk;
 	
 	clock_divider cd (.clock(clk), .divided_clocks(divClocks));
 	
-	assign next_clk = divClocks[clk_select]; // slower clock to use
+	assign next_clk = divClocks[clk_select]; // slower clock to use for VGA
 	
 	// LFSR for random number generation
 	logic [1:0] lfsr_num; // num is input from LFSR
@@ -111,8 +114,6 @@ module datapath(clk,
 	logic [2:0] seq_counter, user_counter, match_counter;
 	logic show_counter;
 	
-	// other logic
-	logic dead;
 	
 // DATAPATH LOGIC
 	always_ff @(posedge clk) begin
@@ -141,7 +142,7 @@ module datapath(clk,
 		
 		// clk_select determines the difficulty of next level
 		if(reset_clk)
-			clk_select <= 25; // 0.75Hz
+			clk_select <= 25; // change to 2 for simulation, 25 for board
 		else if(decr_clk)
 			clk_select <= clk_select - 1;
 			
@@ -172,8 +173,29 @@ module datapath(clk,
 			lives <= lives - 1;
 		else 
 			lives <= lives;
+			
+		if(blank_ready & seq_counter == 6)
+			seq_end = 1;
+		else if(seq_counter == 7)
+			seq_end = 1;
+		else
+			seq_end = 0;
 
 	end // end always_ff
+	
+	// DATAPATH LOGIC FOR VGA DISPLAY
+	always_ff @(posedge next_clk) begin
+		if(show_ready) begin
+			goBlank <= 1;
+			goShow <= 0;
+		end else if(blank_ready) begin
+			goBlank <= 0;
+			goShow <= 1;
+		end else begin
+			goBlank <= 0;
+			goShow <= 0;
+		end
+	end
 	
 	
 // OUTPUT ASSIGNMENTS
@@ -181,7 +203,7 @@ module datapath(clk,
 	
 	assign full_input = (user_counter == 7);
 	
-	assign seq_end = (seq_counter == 7);
+//	assign seq_end = (seq_counter == 7);
 	
 	assign show_counter_zero = (show_counter == 0);
 	
